@@ -1,0 +1,14 @@
+from :- club-en
+
+crytography
+  practise of making things secret
+  critical for secure communications
+
+Cicada 3301 :- set of puzzles (5th jan 2012)
+
+steganography
+  hiding messages or files within other files or msgs.
+  using audio files to store text in their spectrogram
+
+  common tools :- 
+  steghide (audio), binwalk, sonic visualiser (spectrograms)
