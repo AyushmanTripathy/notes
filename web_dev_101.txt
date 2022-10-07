@@ -1,0 +1,86 @@
+internet
+  connection of computer that can communicate using IPS
+  1st Jan 1983
+
+IPS
+  internet protocol suite
+  collection of things used by computers to communicate
+
+  application http ftp smtp
+  transported tcp udp
+  network ip
+  data link physical devices
+
+IP address
+  used to locate computers on the internet
+
+TCP
+  transmission control protocol
+  used to tansport data back and fort between computers
+
+packets
+  data is broken down into these packets when they are transported
+
+WWW
+  world wide web
+  is software that sits on top of internet
+  where ppl can visit web pages by HTTP
+  gives every page URL
+
+URL
+  uniform resource locater
+  used to find things on the internet
+
+browser
+  used to access a url
+  renders the data
+  its called client because it consumes information
+
+Domain Name
+  every web page has a unique domain
+  example.com
+  registered by a registrar
+
+ICANN
+  nonprofit
+  accredits registrars
+  oversees namespaces on the internet
+
+DNS
+  domain name system
+  maps domain names to ips
+
+HTML
+  hypertext markup language
+  used for displaying informations on those web pages
+
+DOM
+  Document Object model
+  hierarchy of all elements in the html
+
+DIV
+  division
+  section of the webpage
+
+CSS
+  cascading stylesheets
+  changing the apperance of html elements
+  CSS cascades, which means style can be given for multiple elements at once giving more code reusabillity
+
+position property
+  relative : move no of pixels from normal position
+  absolute : move relative to nearest ancestor
+  fixed : relative to the entire viewport
+
+media query
+  allows to get information about the deivce rendering the webpage
+  apply css properties accordingly
+
+event listeners
+  functions that are called when event is emmited by browser
+
+prototypal inheritance
+  object when cloned creates a chain of ancestors and where a child inherits
+  methods and propertise of his ancestor
+
+
