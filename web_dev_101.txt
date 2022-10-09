@@ -42,6 +42,7 @@ Domain Name
   registered by a registrar
 
 ICANN
+  internet corporation for assigned names and numbers
   nonprofit
   accredits registrars
   oversees namespaces on the internet
