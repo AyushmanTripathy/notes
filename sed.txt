@@ -1,0 +1,26 @@
+from :- Distrotube
+
+SED "String Text Editor"
+
+SUBSTITUTION
+  substitution once per line
+  sed 's/find/replace/'
+
+  substitution globally
+  sed 's/find/replace/g'
+
+  substitution to line which match a pattern
+  sed '/pattern/s/find/replace/'
+
+  -i | writes to the target file
+
+DELETION
+  delete line containing pattern
+  sed '/pattern/d'
+
+MISCELLANEOUS
+  multiple operations can be chained
+  sed -e '/pattern/d' -e 's/find/replace'
+
+  remove spaces from ending of lines
+  sed -i 's/ *$//' filename

@@ -1,87 +1,87 @@
-SSH :- Secure Shell Works
+from :- distrotube
 
-packet length
----------------------
-padding length      |
-payload             | encrypted
-padding             |
----------------------
-message authentication code
+SSH
+  Secure Shell Works
 
-called a packet
-whole packet is compressed
+  packet length
+  ---------------------
+  padding length      |
+  payload             | encrypted
+  padding             |
+  ---------------------
+  message authentication code
+  
+  called a packet
+  whole packet is compressed
+  
+  ssh also creates multiple channels
+  
+  package name
+    debain :- openssh-client, openssh-server
+    arch :- openssh
+  
+  to ssh to user lol of ip 111.111.111.111
+  
+  ```````````````````````
+  ssh lol@111.111.111.111
+  
+  ```````````````````````
 
-ssh also creates multiple channels
+GENERAL PURPOSE
+  many linux distro have firewall name ufw
+  you have to allow ssh on ufw
+  
+  `````````````
+  ufw allow ssh
+  
+  `````````````
+  
+  to get the ip address
+  sample output from `ip a`
+  -----------------------
+  1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+      link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+      inet 127.0.0.1/8 scope host lo
+         valid_lft forever preferred_lft forever
+      inet6 ::1/128 scope host 
+         valid_lft forever preferred_lft forever
+  5: eth0@if6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+      link/ether 00:16:3e:86:6f:f8 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+      inet 100.115.92.195/28 brd 100.115.92.207 scope global eth0
+         valid_lft forever preferred_lft forever
+      inet6 2409:4062:201f:4d8a:216:3eff:fe86:6ff8/64 scope global dynamic mngtmpaddr 
+         valid_lft forever preferred_lft forever
+      inet6 fe80::216:3eff:fe86:6ff8/64 scope link 
+         valid_lft forever preferred_lft forever
+  --------------------------
+  
+  here inet is the ip (100.115.92.195)
 
-package name
-  debain :- openssh-client, openssh-server
-  arch :- openssh
-
-to ssh to user lol of ip 111.111.111.111
-
-```````````````````````
-ssh lol@111.111.111.111
-
-```````````````````````
-
-######################
-
-many linux distro have firewall name ufw
-you have to allow ssh on ufw
-
-`````````````
-ufw allow ssh
-
-`````````````
-
-to get the ip address
-sample output from `ip a`
------------------------
-1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
-    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    inet 127.0.0.1/8 scope host lo
-       valid_lft forever preferred_lft forever
-    inet6 ::1/128 scope host 
-       valid_lft forever preferred_lft forever
-5: eth0@if6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
-    link/ether 00:16:3e:86:6f:f8 brd ff:ff:ff:ff:ff:ff link-netnsid 0
-    inet 100.115.92.195/28 brd 100.115.92.207 scope global eth0
-       valid_lft forever preferred_lft forever
-    inet6 2409:4062:201f:4d8a:216:3eff:fe86:6ff8/64 scope global dynamic mngtmpaddr 
-       valid_lft forever preferred_lft forever
-    inet6 fe80::216:3eff:fe86:6ff8/64 scope link 
-       valid_lft forever preferred_lft forever
---------------------------
-
-here inet is the ip (100.115.92.195)
-
-######################
 
 USING SSH WITH KEYS
-ssh using keys allows you to not use passwords.
+  ssh using keys allows you to not use passwords.
+  
+  ```````````````````
+  # generates keys
+  ssh-keygen -t ed25519
+  
+  # copy key to server
+  ssh-copy-id user@111.111.111.111
+  
+  ```````````````````
+  here ed25519 is public-key system which can be found on the ssh-keygen manpage
+  to disable ssh using password authentication
+  line is already on the config
+  
+  /etc/shh/ssh-d_config
+  PasswordAuthentication no
+  
+  passphrase used for securing your keys
+  use when physical access to your machine is not secure
 
-```````````````````
-# generates keys
-ssh-keygen -t ed25519
-
-# copy key to server
-ssh-copy-id user@111.111.111.111
-
-```````````````````
-here ed25519 is public-key system which can be found on the ssh-keygen manpage
-to disable ssh using password authentication
-line is already on the config
-
-/etc/shh/ssh-d_config
-PasswordAuthentication no
-
-passphrase used for securing your keys
-use when physical access to your machine is not secure
-
-######################
 
 TERMINAL SHARING
-program :- tmate
-
-share the ssh or the web link
-you are good to go
+  program :- tmate
+  
+  share the ssh or the web link
+  you are good to go
