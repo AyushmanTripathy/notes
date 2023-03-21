@@ -24,3 +24,6 @@ MISCELLANEOUS
 
   remove spaces from ending of lines
   sed -i 's/ *$//' filename
+
+  remove empty lines
+  sed -i '/^$/d'
