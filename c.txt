@@ -1,0 +1,73 @@
+C Programming Language
+
+STRINGS
+  initialize strings
+
+    char a[] = "your strings"; // array
+    char * a = "your strings"; // pointer
+
+  include string.h  // adds string functions
+
+  functions
+  strlen(str)     | returns string length
+  strcat(a,b)     | add b to a
+  strncat(a,b,i)  | adds i letters of b at end of a
+  sizeof(var)     | returns memory size, one null at end
+  strcpy(a,b)     | copies b to a
+  strcmp(a,b)     | compares a to b (0 for equal)
+
+LOOPS
+  while and for loops
+  continue skips loop
+  break halts loop
+
+FUNCTIONS
+  functions should be first declared
+
+    int foo(int bar);
+    int main() {
+      foo(1);
+    }
+    int foo(int bar) {
+        return bar + 1;
+    }
+  
+  void keyword for not returning
+  static keyword used to reduce scope
+  by default functions are global
+
+    static void foo(void) {}
+
+
+STATIC VARIABLES
+  static keyword for increasing scope of variables
+  by default variables are local
+
+    int counter() {
+        static int count = 0;
+        count++;
+        return count;
+    } int main() {
+        printf("%d ", counter());
+        printf("%d ", counter());
+        return 0;
+    }
+
+  returns number of times function is called.
+
+STRUCTURES
+  defining custom data types
+    
+    struct point { int x; int y; };
+    struct point p;
+    p.x = 10; p.y = 5;
+  
+  typedef are used to define custom type
+
+    typedef struct {
+      char * brand;
+      int model;
+    } vehicle;
+    vehicle mycar;
+    mycar.name = "Ford";
+
