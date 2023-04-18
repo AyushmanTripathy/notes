@@ -38,6 +38,16 @@ FUNCTIONS
 
     static void foo(void) {}
 
+  REFRENCING BY ARGUMENTS
+    give memory address as argument to a function
+
+      void inc(int * n) {
+        (*n)++;
+      }
+      int n;
+      inc(&n);
+      printf("%d",n) // gives 1
+
 
 STATIC VARIABLES
   static keyword for increasing scope of variables
@@ -71,3 +81,49 @@ STRUCTURES
     vehicle mycar;
     mycar.name = "Ford";
 
+POINTERS
+  is a integer variable holding memory address pointing to a value.
+    
+    char * name = "John";
+
+  "John" is stored sequentially in memory,
+  name points to "J" (first char)
+  \0 is null terminator (value is 0)
+
+  DEREFRENCING
+    getting the value not the memmory address of a pointer
+    arrays are actually pointers
+    [] operator does derefrencing for arrays
+    * does dereferencing for pointers
+
+      int a = 1;
+      int * pointer = &a;
+      printf("%d",*pointer) // gives 1
+      *pointer += 1;
+      printf("%d",*pointer) // gives 2
+
+  POINTERS TO STRUCTURES
+    can be done using two syntax
+      
+      void move(point * p) {
+        (*p).distance++;
+      }
+      void move(point * p ) {
+        p -> distance++; 
+      }
+
+DYNAMIC ALLOCATION
+  helps in storing data with out knowing its size
+    
+    person * me = (person *) malloc(sizeof(person));
+    me -> name = "John";
+
+  me is a pointer, has just enough memory to store person struct
+  malloc function returns a `void pointer`
+  (person *) is called typecasting (changes pointer's type)
+    
+    free(me);
+
+  frees the memory
+  
+NOTE: sizeof is not actual function
