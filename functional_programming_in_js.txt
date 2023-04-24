@@ -1,0 +1,22 @@
+from :- Anjana Vakil, JSConf
+
+Functional Programming 
+----------------------
+is a programming paradigm, mindset, coding style.
+safe and better to debug
+
+Commandments
+------------
+1. do every thing with functions
+2. functions should be pure (avoid side effects)
+   side effect - anything other than returning an output from a input
+               - using global variables
+               - console loging
+3. higher order functions
+   functions as input and output of a function
+4. donot iterate, use recursion
+   map - do something to every item
+   reduce - compines something from every item
+   filter - make a list of everthing satifying a condition
+5. immutable data
+6. persistant data structures (immutable.js, mori)
