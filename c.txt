@@ -1,3 +1,5 @@
+from:- learn-c.org
+
 C Programming Language
 
 STRINGS
@@ -112,6 +114,13 @@ POINTERS
         p -> distance++; 
       }
 
+  ARRAYS
+    arrays can be simulated as
+      
+      char * vowels = "AEIOU";
+      char p = &vowels;
+      vowels[1] == *(p + 1) //true
+
 DYNAMIC ALLOCATION
   helps in storing data with out knowing its size
     
@@ -125,5 +134,4 @@ DYNAMIC ALLOCATION
     free(me);
 
   frees the memory
-  
-NOTE: sizeof is not actual function
+  note: sizeof is not actual function
