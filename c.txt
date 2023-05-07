@@ -135,3 +135,12 @@ DYNAMIC ALLOCATION
 
   frees the memory
   note: sizeof is not actual function
+
+FUNCTION POINTERS
+  we can call funtions by pointers
+    
+    void (*p)(int);
+    p = &function;
+    (p)(1);
+
+  pass functions as to functions
