@@ -1,0 +1,5 @@
+from:- MIT 600
+
+module : collection of related functions
+object : data abstractions, abstract data types
+class  : collection of objects with charaterstics in common
