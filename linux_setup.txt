@@ -17,3 +17,18 @@ sudo usermod -a -G video <username>
 ```
 
 3. reboot
+
+BLUETOOTH
+---------
+
+using: bluez
+
+1. add in /etc/bluetooth/main.conf
+```
+Expreimental=true
+```
+
+CRONJOBS
+--------
+
+using: cronie
