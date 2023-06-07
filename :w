@@ -1,8 +1,0 @@
-GNU PRIVACY GUARD
------------------
-
-1. generating keys
-
-```
-gpg --full-generate-key
-```
