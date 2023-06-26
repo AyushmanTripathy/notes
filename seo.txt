@@ -1,0 +1,8 @@
+SEARCH ENGINE OPTIMIZATION
+--------------------------
+
+1. bref titles
+2. description meta tag
+3. add image metadata
+4. robots.txt
+5. sitemap.xml (or .txt)
