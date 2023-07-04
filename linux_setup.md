@@ -1,5 +1,4 @@
-TIME
-----
+## TIME
 
 add cron task for every minute
 
@@ -7,8 +6,7 @@ add cron task for every minute
 pkill -RTMIN+9 dwmblocks
 ```
 
-BRIGHTNESS
-----------
+## BRIGHTNESS
 
 1. add rule to udevs
 
@@ -29,8 +27,7 @@ sudo usermod -a -G video <username>
 
 3. reboot
 
-BLUETOOTH
----------
+## BLUETOOTH
 
 required package: `bluez`, `bluez-utils`
 
@@ -47,8 +44,8 @@ systemctl enable bluetooth
 systemctl start bluetooth
 ```
 
-TOUCHPAD
---------
+## TOUCHPAD
+
 required package: `xf86-input-synaptics`
 
 in /etc/X11/xorg.conf.d/70-synaptics.conf
@@ -70,21 +67,82 @@ Section "InputClass"
         Option "EmulateTwoFingerMinZ" "40"
         Option "EmulateTwoFingerMinW" "8"
         Option "CoastingSpeed" "0"
-        Option "FingerLow" "30"
-        Option "FingerHigh" "50"
+        Option "FingerLow" "10"
+        Option "FingerHigh" "30"
         Option "MaxTapTime" "125"
 EndSection
 ```
 
-CRONJOBS
---------
+## NOTIFICATION
 
-using: cronie
+required packages: `libnotify`, `dunst`
+
+## CRONJOBS
+
+required packages: `cronie`
 
 ```
 systemctl enable cronie
 systemctl start cronie
 ```
-NOTIFICATION
-------------
-required packages: `libnotify`, `dunst`
+
+## Other Packages I use
+
+#### wm
+
+1. dwm [window manager]
+1. dmenu [input?]
+1. dwmblocks [status bar]
+
+#### gui programs
+
+1. chromium [web browser]
+1. mpv [media player]
+1. sxiv [image viewer]
+1. slock [lock screen]
+1. st [terminal emulator]
+
+#### tui programs
+
+1. neovim [text editor]
+1. moc [music player]
+1. htop [task manager]
+1. man [docs]
+
+#### tools
+
+1. tree [listing directories]
+1. openssh [ssh client and daemon]
+1. sshfs [mounting remote directories]
+1. yay [AUR package manager]
+1. scrot [screen shot]
+1. slop [mouse selection]
+1. udisks2 [usb ejection]
+1. zip and unzip [working with .zips]
+1. fzf [fuzzy finder]
+1. speedtest-cli [testing network speeds]
+1. qrencode [qrcodes]
+
+1. xdotool [automations]
+1. xclip [clipboard]
+1. xwallpaper [wallpaper]
+
+#### daemons
+
+1. picom [compositor]
+1. pipewire [audio]
+1. networkmanager [networking]
+1. dunst & libnotify [notifications]
+1. bluez & bluez-utils [bluetooth]
+1. cronie [cronjobs]
+
+#### fun
+
+1. sl
+1. cmatrix
+
+#### programming
+
+1. nodejs [from nvm]
+1. pip [package manager for python]
+1. nodemon, live-server & editmd [from npm]
