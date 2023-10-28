@@ -59,7 +59,8 @@ STATIC VARIABLES
         static int count = 0;
         count++;
         return count;
-    } int main() {
+    }
+    int main() {
         printf("%d ", counter());
         printf("%d ", counter());
         return 0;

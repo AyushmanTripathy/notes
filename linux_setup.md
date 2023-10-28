@@ -48,6 +48,7 @@ systemctl start bluetooth
 
 required package: `xf86-input-synaptics`
 
+note: libinput is something
 in /etc/X11/xorg.conf.d/70-synaptics.conf
 
 ```
