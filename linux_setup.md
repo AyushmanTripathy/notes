@@ -97,7 +97,7 @@ systemctl start cronie
 
 #### gui programs
 
-1. chromium [web browser]
+1. thorium [web browser]
 1. mpv [media player]
 1. sxiv [image viewer]
 1. slock [lock screen]
