@@ -1,0 +1,27 @@
+SDL 2 
+  Rendering Pixels to screen in c++
+
+  SDL_Window * window = nullptr;
+  SDL_Renderer * renderer = nullptr;
+  SDL_Init(SDL_INIT_VIDEO);
+
+  // size -> pixel size
+  SDL_CreateWindowAndRenderer(height*size, width*size, 0, &window, &renderer);
+  // this is not required
+  SDL_RenderSetScale(renderer, size, size);
+
+  // background color in rgba format
+  SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+  SDL_RenderClear(renderer);
+
+  // color of pixel
+  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+
+  // draw function
+  SDL_RenderDrawPoint(renderer, 25, 25);
+
+  // render function
+  SDL_RenderPresent(renderer);
+
+  // wait before closing
+  SDL_Delay(10000);

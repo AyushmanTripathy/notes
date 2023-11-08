@@ -1,3 +1,11 @@
+## PACMAN
+
+in /etc/pacman.conf uncomment the line
+
+```
+#ParallelDownloads = 5
+```
+
 ## TIME
 
 add cron task for every minute
