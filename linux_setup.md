@@ -82,6 +82,10 @@ Section "InputClass"
 EndSection
 ```
 
+## EMOJIS
+
+required packages: `noto-fonts-emoji`
+
 ## NOTIFICATION
 
 required packages: `libnotify`, `dunst`
@@ -94,6 +98,15 @@ required packages: `cronie`
 systemctl enable cronie
 systemctl start cronie
 ```
+
+## FileSystem Tools
+
+change permission for /media `chown -R ayush:ayush /media`
+
+1. gparted
+1. exfatprogs
+1. dosfstools
+1. ntfsprogs
 
 ## Other Packages I use
 
