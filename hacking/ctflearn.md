@@ -30,3 +30,18 @@ git show SHA:./path/to/file
 ```
 git checkout SHA
 ```
+
+HEXADECIMAL
+-----------
+
+```
+xxd <filename> | nvim
+echo <string> | xxd -r
+```
+
+CRYPTO
+--------
+
+1. Base64 Encoding
+1. Morse Code
+1. vigenere cypher (has a key)
