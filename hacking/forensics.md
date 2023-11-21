@@ -15,6 +15,25 @@ IMAGES
 binwalk --extract --dd ".*" <filename>
 ```
 
+JPGS
+----
+
+- height and width of image can be changed to hide content
+- use cyberchef, upload img and run `to hex`
+- copy output and `from hex` and `render image`
+
+```
+// in JPG file
+
+ff c0 00 11 08 02 22 02 09
+
+ff c0 => SOFO Identifier 
+00 11 => Length
+08    => Data Presicion
+02 22 => Height
+02 09 => Width
+```
+
 GIT
 ---
 
