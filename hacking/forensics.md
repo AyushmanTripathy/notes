@@ -15,6 +15,18 @@ IMAGES
 binwalk --extract --dd ".*" <filename>
 ```
 
+STEGHIDE
+--------
+
+- can be used for many file formats
+- requires a passphrase
+
+```
+steghide info <filename>
+```
+
+- use `steghide extract -sf <filename>` to extract.
+
 JPGS
 ----
 
