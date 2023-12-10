@@ -1,0 +1,43 @@
+SLIDING WINDOW
+--------------
+from:- youtu.be/jM2dhDPYMQM
+
+subarray -> continious elements
+subset -> any elements
+
+WHEN
+  finding subarrays satisfing condition
+
+HOW
+  collection of elements -> window
+  move, shirnk or expand window
+
+O(n) time and O(1) space
+subset of dynamic programming
+
+DYNAMICALLY SIZED
+-----------------
+  summation (non negative)
+    shrink or exapand depending on sum
+  summation (with negative)
+    add the min value to the array
+    i.e. convert to non negative array
+
+    more optimised -> kadane's algo
+
+STRUCTURE
+---------
+
+max_len = 0, l = 0, r = 0
+while (r < n) {
+  if (violation) {
+    // update max/min as prev iter was a solution
+    max_len = max(max_len, r - l)
+
+    // shrink untill violation is removed
+    // till it exists + 1
+    while (violation) i++
+    i++
+  }
+  r++
+}
