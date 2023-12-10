@@ -118,7 +118,7 @@ change permission for /media `chown -R ayush:ayush /media`
 
 #### gui programs
 
-1. thorium [web browser]
+1. chromium [web browser]
 1. mpv [media player]
 1. sxiv [image viewer]
 1. slock [lock screen]
@@ -134,6 +134,7 @@ change permission for /media `chown -R ayush:ayush /media`
 #### tools
 
 1. tree [listing directories]
+1. pandoc [opening .docx, .pptx]
 1. openssh [ssh client and daemon]
 1. sshfs [mounting remote directories]
 1. yay [AUR package manager]

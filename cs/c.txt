@@ -1,4 +1,4 @@
-from:- learn-c.org
+from:- https://learn-c.org
 
 C Programming Language
 
@@ -8,13 +8,12 @@ STRINGS
     char a[] = "your strings"; // array
     char * a = "your strings"; // pointer
 
-  include string.h  // adds string functions
+  include <string.h>  // adds string functions
 
   functions
   strlen(str)     | returns string length
   strcat(a,b)     | add b to a
   strncat(a,b,i)  | adds i letters of b at end of a
-  sizeof(var)     | returns memory size, one null at end
   strcpy(a,b)     | copies b to a
   strcmp(a,b)     | compares a to b (0 for equal)
 
@@ -81,6 +80,7 @@ STRUCTURES
       char * brand;
       int model;
     } vehicle;
+
     vehicle mycar;
     mycar.name = "Ford";
 
@@ -136,12 +136,35 @@ DYNAMIC ALLOCATION
 
   frees the memory
   note: sizeof is not actual function
+  
+  malloc(n)       |   allocates n no of bytes with garbage values 
+  calloc(n, m)    |   allocates n * m no of bytes with value 0
+  realloc(ptr, n) |   reallocates ptr to n no of bytes, copys 
+                      values over uninitiated values are garbage.
 
 FUNCTION POINTERS
   we can call funtions by pointers
     
     void (*p)(int);
-    p = &function;
+    p = &function_name;
     (p)(1);
 
   pass functions as to functions
+
+STORAGE CLASSES
+  used to change visibillity and lifetime of a variable
+  NOTE: cannot get address of register, but can store ptrs in it
+
+  AUTO
+    stack, garbage values, within block, end of block
+  STATIC
+    data segment, zero, within block, end of program
+  EXTERN
+    data segment, zero, global (multiple files), end of program
+  REGISTER
+    cpu register, garbage values, within block, end of block
+
+STDLIB FUNCTIONS
+  STDIO
+    int printf(char *, );   returns no of chars printed
+    int scanf(char *, );    returns no of inputed scanned
