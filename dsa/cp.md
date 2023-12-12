@@ -13,6 +13,19 @@ for (auto pair : map)
     cout << pair.first << pair.second << endl;
 ```
 
+#### Hash Sets
+
+```cpp
+unordered_set<string> set;
+
+map.insert(key) //add key to set 
+
+if (set.find(key) != set.end()) //check for set in map
+
+for (auto key : set)
+    cout << key << endl;
+```
+
 #### Vectors
 
 ```cpp

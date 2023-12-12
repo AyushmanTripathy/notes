@@ -1,0 +1,37 @@
+LINKED LIST
+-----------
+
+WHEN
+  when question comes
+HOW
+  each node has a val and a next pointer
+
+O(n) time and O(1) time
+
+SINGLY LINKED
+-------------
+
+when related to size, use two pointer
+(use difference between pointer)
+
+adding a dummy node to start
+(return dummy->next)
+
+TORTOISE AND HARE
+-----------------
+
+WHEN
+  dectecting cycles
+HOW
+  one pointer is faster than other
+  i moves at speed 1, j moves at 2
+  if they meet -> cycle
+
+Node * t = head, * h = head;
+while (h != nullptr) {
+    if (h->next == nullptr) return false;
+    else h = h->next->next; 
+    t = t->next;
+    if (h == t) return true;
+}
+return false;
