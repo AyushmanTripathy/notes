@@ -6,3 +6,8 @@
 [ ] Binary Search
 [ ] Sliding Window
 [ ] Linked Lists
+
+# Projects
+
+[ ] callbomber with termux
+[ ] youtube archive project

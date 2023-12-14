@@ -1,0 +1,40 @@
+TORTOISE AND HARE
+-----------------
+
+WHEN
+  dectecting cycles
+  finding starting point of cycle
+HOW
+  one pointer is faster than other
+  i moves at speed 1, j moves at 2
+  if they meet -> cycle exists
+
+  change fast speed to 1
+  move slow to start
+  they meet -> starting point of cycle
+
+
+STRUCTURE
+---------
+
+Node * t = head, * h = head;
+
+// check if a cycle exits
+do {
+    if (h->next == nullptr) return false;
+    else h = h->next->next;
+
+    if (h == nullptr) return false;
+
+    t = t->next;
+} while(h != t);
+
+// confirmed a cycle
+t = head;
+do {
+    t = t->next;
+    h = h->next;
+} while(t != h);
+
+// starting point of cycle
+return t;

@@ -17,21 +17,14 @@ when related to size, use two pointer
 adding a dummy node to start
 (return dummy->next)
 
-TORTOISE AND HARE
------------------
+about cycles -> tortoise and hare
+
+ARRAY AS LISTS
+--------------
+
+if max value < size of array
+every index's value is next index
+duplicate values -> cycles in list
 
 WHEN
-  dectecting cycles
-HOW
-  one pointer is faster than other
-  i moves at speed 1, j moves at 2
-  if they meet -> cycle
-
-Node * t = head, * h = head;
-while (h != nullptr) {
-    if (h->next == nullptr) return false;
-    else h = h->next->next; 
-    t = t->next;
-    if (h == t) return true;
-}
-return false;
+  finding duplicates
