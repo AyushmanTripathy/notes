@@ -2,7 +2,8 @@ LINKED LIST
 -----------
 
 WHEN
-  when question comes
+  elements have to be kept in order
+  and order can be changed in O(1)
 HOW
   each node has a val and a next pointer
 
@@ -28,3 +29,4 @@ duplicate values -> cycles in list
 
 WHEN
   finding duplicates
+

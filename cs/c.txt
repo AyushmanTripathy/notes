@@ -93,11 +93,16 @@ POINTERS
   name points to "J" (first char)
   \0 is null terminator (value is 0)
 
+  const pointer vs pointer to const
+    const type * ptr; // can be changed
+    type * const ptr; // cannot be changed
+
   DEREFRENCING
     getting the value not the memmory address of a pointer
     arrays are actually pointers
     [] operator does derefrencing for arrays
     * does dereferencing for pointers
+    void * cannot be derefrenced
 
       int a = 1;
       int * pointer = &a;
