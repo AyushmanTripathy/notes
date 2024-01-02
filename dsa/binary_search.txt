@@ -12,6 +12,10 @@ HOW
 O(log n) time and O(1) space
 check if input can be sorted
 
+ROTATED
+-------
+add conditions for each sorted part of array
+
 STRUCTURE
 ---------
 

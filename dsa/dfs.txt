@@ -1,0 +1,29 @@
+Depth First Search
+------------------
+
+WHEN
+  height of node is involved
+
+STRUCTURE
+---------
+
+int dfs(Node * n) {
+  if (n == nullptr) return 0;
+  int left = dfs(left);
+  int right = dfs(right);
+
+  // do something with left and right
+
+  return max(left, right) + 1;
+}
+
+ITERATIVE
+---------
+store node and depth
+
+add root to stack
+for top of stack
+  pop top
+  update max_depth
+  push left childrens
+  push right childrens

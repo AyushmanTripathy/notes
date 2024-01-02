@@ -1,5 +1,24 @@
 # Competative Programming
 
+#### Deque
+
+```cpp
+deque<int> que;
+
+// push
+que.push_back(1);
+// shift
+que.push_front(1);
+
+// pop
+int x = que.back();
+que.pop_back();
+
+// unshift
+int x = que.front();
+que.pop_front();
+```
+
 #### Hash Maps
 
 ```cpp
@@ -58,6 +77,7 @@ vec.push_back({ 1, 2, 3 });
 speeds up execution time by 2 times
 
 ```cpp
-ios_base::sync_with_stdio(false);
+ios::sync_with_stdio(false);
 cin.tie(NULL);
+cout.tie(NULL);
 ```
