@@ -82,6 +82,8 @@ add     ebx,    10      (assembly)
 - jumps to OS code, OS saves where program left off, load diff program, repeat
 
 - Preemption, interruption of a process
+- kernel code is also preemptive
+- opposite: Cooperative Multitasking, progs give control on their own
 
 ### Timeslice Calculation
 
@@ -97,3 +99,52 @@ add     ebx,    10      (assembly)
 - timeslice = target latency / no of process
 - minimum granularity can exceed target latency
 - since process switching is heavy.
+
+
+### Exec Syscalls
+
+- shebangs are used by kernel and turnicated by 256 bytes
+- first iterates through binfmt (binary format) handlers to find a match
+- handler than perform execution.
+
+- for ELF format,
+- `PT_LOAD` is loaded into memory
+- `PT_INTERP` is loaded into memory if present (which is ld)
+- if dynamic linking, CPU starts at `PT_INTERP` else at executable
+
+
+### ELF format
+
+- Executable and Linkable format
+- like PE (Portable Executable in .exe files) or Mach-O (on MacOS) 
+- handled by `binfmt_elf`
+- file structure, 
+
+1. ELF Header
+
+- what processor, entry point, if it a dll
+
+1. Program Header Table
+
+- `PT_LOAD`, `PT_INTERP`, `PT_DYNAMIC` etc
+- what virtual memory address data to be loaded in
+- length of data and length of memory region
+- BSS is empty region, maybe used at runtime (filled with 0s)
+- permission flags (RWX)
+
+1. Section Header Table
+
+- map for data in ELF
+- not required for execution, used by Debuggers.
+
+1. Actual Data
+
+### Linking
+
+- static linking means copying code at build time from developer's computer
+- dynamic linking code loaded from user computer at runtime
+- Linux .so (Shared Object), windows .dll (dynamic link library), MacOS .dylib
+- static linking loads only required portions
+- dynamic linking loads whole library, saves memory as it is shared
+
+- linker (ld) replaces named pointers to jump instructions
