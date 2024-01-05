@@ -103,6 +103,7 @@ add     ebx,    10      (assembly)
 
 ### Exec Syscalls
 
+- execve func
 - shebangs are used by kernel and turnicated by 256 bytes
 - first iterates through binfmt (binary format) handlers to find a match
 - handler than perform execution.
@@ -124,7 +125,7 @@ add     ebx,    10      (assembly)
 
 - what processor, entry point, if it a dll
 
-1. Program Header Table
+2. Program Header Table
 
 - `PT_LOAD`, `PT_INTERP`, `PT_DYNAMIC` etc
 - what virtual memory address data to be loaded in
@@ -132,12 +133,12 @@ add     ebx,    10      (assembly)
 - BSS is empty region, maybe used at runtime (filled with 0s)
 - permission flags (RWX)
 
-1. Section Header Table
+3. Section Header Table
 
 - map for data in ELF
 - not required for execution, used by Debuggers.
 
-1. Actual Data
+4. Actual Data
 
 ### Linking
 
@@ -148,3 +149,64 @@ add     ebx,    10      (assembly)
 - dynamic linking loads whole library, saves memory as it is shared
 
 - linker (ld) replaces named pointers to jump instructions
+
+### MMU
+
+- memory managment chip
+- at first CPI access physical RAM directly, then OS creates the translation dictionary.
+- dictionary -> page table, which has pages
+- x86-64 has 4KiB page size
+- meaning last 12 bits map to 4096 bytes in that page, other bits map to the page itself
+- page table itself resides in RAM
+- table can be edited at runtime
+- this is how OS switches context during process swapping and how process have
+  isolated memory space
+
+### Security with Pages
+
+- a process cannot access another process's memory
+- in Linux, Kernel uses higher half of the virtual memory space
+- lower half for userland programs
+- Linux is called higher half kernel, windows is similar
+- each page also has permissions
+
+### Hierarchical Paging
+
+- since for 64bit system possible RAM space is very large
+- pages are stored in tree structure, where leaves are of page size
+- level of tree have increasing granularity
+- accessed by adding bits to page table base address
+- while swaping process, only pointer for the top level needs to be changed
+- page fault, hardware interrupt from MMU when addr is not mapped or unpresent
+- demand paging (MMAP), CPU gets a page fault then loads into RAM
+
+### Forking
+
+- unlike execve, which replace a process with another
+- fork (system call) creates a new child process
+- child process continues from the next instruction
+- to spawn a new process, fork then execve in child
+- `init` process is the first process by kernel
+
+### COW Pages
+
+- copy on write pages
+- instead of copying physical memory of process during fork, only pages are copied
+- makes fork-execve more efficient
+- if any of the process write to memory, physical memory is copied
+- using hardware interrupts same as demand paging
+
+### Boot Sequence
+
+1. motherboard's software looks for bootloader in connected disks
+1. bootloader then executes a kernel (GRUB, BootX, Windows Boot Manager)
+1. kernel sets up interrupt handlers, drivers, memory mapping
+1. kernel changes to user mode and starts init program (systemd, OpenRC)
+1. init program runs init scripts, starts services, runs shell/UI
+
+### Extras
+
+- kB means 1000, KiB means 1024
+- actually 48 bits are used for address to save page table space
+- ilegal memory access, MMU hardware interrupt to Kernel.
+- if problem couldnot be resolved -> segmentation fault
