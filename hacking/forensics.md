@@ -15,6 +15,15 @@ IMAGES
 binwalk --extract --dd ".*" <filename>
 ```
 
+ZSTEG
+-----
+
+read pixel values as ASCII, etc
+
+```
+zsteg -a <filename>
+```
+
 STEGHIDE
 --------
 

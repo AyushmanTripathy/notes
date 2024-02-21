@@ -1,0 +1,26 @@
+TWO POINTERS
+------------
+
+WHEN
+  select 2 or 3 nums form array
+
+HOW
+  having two pointers
+
+generally O(n) time and O(1) space
+
+3SUM
+  select 3 nums such that sum is 0
+
+  nums.sort()
+  for i in [0, n - 2]
+    if nums[i] > 0: break
+    j = i + 1
+    k = n - 1
+    while j < k
+      sum = nums[i] + nums[j] + nums[k]
+      if sum > 0: k--
+      else if sum < 0: j++
+      else: sols.add(i, j, k)
+
+  if duplicates are present skip i and j

@@ -1,0 +1,19 @@
+DIFFERENCE ARRAY
+----------------
+
+WHEN
+  update all values in range [i, j]
+HOW
+  calculate i's value relative to i - 1
+
+diffrence array is calculated
+a[0] is not changed
+a[i] = a[i] - a[i - 1]
+
+when range [i, j] has to increased by dx
+a[i] += dx
+a[j + 1] -= dx
+
+original array is calculated
+a[0] is not changed
+a[i] = a[i] + a[i - 1]

@@ -1,4 +1,4 @@
-Depth First Search
+DEPTH FIRST SEARCH
 ------------------
 
 WHEN
@@ -6,24 +6,35 @@ WHEN
 
 STRUCTURE
 ---------
+// gives height of tree
 
 int dfs(Node * n) {
   if (n == nullptr) return 0;
   int left = dfs(left);
   int right = dfs(right);
 
-  // do something with left and right
-
   return max(left, right) + 1;
 }
 
 ITERATIVE
 ---------
-store node and depth
+// gives height of tree
 
-add root to stack
-for top of stack
-  pop top
-  update max_depth
-  push left childrens
-  push right childrens
+if (n == nullptr) return 0;
+
+int tree_height = 0;
+deque<pair<Node *, int>> s;
+s.push_back({ n, 1 });
+
+while(!s.empty()) {
+  auto [n, height] = s.back();
+  s.pop_back();
+
+  if (n->right) s.push_back({ n->right, height + 1});
+  if (n->left) s.push_back({ n->left, height + 1 });
+
+  // do something with height
+  tree_height = max(tree_height, height);
+}
+
+return tree_height;

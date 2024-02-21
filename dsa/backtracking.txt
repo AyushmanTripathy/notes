@@ -1,0 +1,32 @@
+BACKTRACKING
+------------
+
+WHEN
+  involves decision trees
+HOW
+  using recursion
+  base case -> problem specific
+  build all solutions
+
+CHOICE
+------
+
+permutations -> not in ans array
+power sets -> binary choice
+combination -> itself or above index only
+partitioning -> itself or above index only
+
+if duplicates exists, but not required in result
+nums.sort() //in begining
+
+while(i < nums.length - 1 && nums[i] == nums[i + 1]) i++;
+g(i + 1) // not including call
+
+STRUCTURE
+---------
+const power = [], arr = [];
+const g = (index) => {
+    // base case
+    // choice
+}
+g(0);

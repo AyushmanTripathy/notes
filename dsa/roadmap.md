@@ -3,9 +3,9 @@
 [x] Arrays and Hashing
 [x] Stack
 [x] Two Pointers
+[x] Sliding Window
+[x] Linked Lists
 [ ] Binary Search
-[ ] Sliding Window
-[ ] Linked Lists
 
 # Projects
 

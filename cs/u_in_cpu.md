@@ -62,7 +62,7 @@ add     ebx,    10      (assembly)
 - complex instruction set computer
 - example `x86-64`
 - single instruction does several operations
-- needed because RAM is compared to CPU
+- needed because RAM is slower compared to CPU
 
 - `SYSCALL` and `SYSENTER` are optimised alternatives to `INT 0x80`
 - `SYSRET` and `SYSEXIT` for `IRET`
@@ -210,3 +210,6 @@ add     ebx,    10      (assembly)
 - actually 48 bits are used for address to save page table space
 - ilegal memory access, MMU hardware interrupt to Kernel.
 - if problem couldnot be resolved -> segmentation fault
+
+- processor cache -> SRAM or Static RAM (in MiBs)
+- RAM -> DRAM or Dynamic RAM

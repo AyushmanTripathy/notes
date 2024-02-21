@@ -1,0 +1,25 @@
+GET TO 100
+----------
+
+DESCRIPTION
+  2 player
+  one chooses a number, n
+  next player chooses a number in (n, n + 10]
+  1st to reach 100 wins
+
+STRATEGY
+  follow sequence, 1, 12, 23, 34, 45, 56, 67, 78, 89, 100
+  through backwards induction
+
+GUESS THE NUMBER
+----------------
+
+DESCRIPTION
+  2 player
+  select a random number
+  how many questions you need?
+
+STRATEGY
+  binary search -> 7 questions
+  what's the number
+  what's the digits

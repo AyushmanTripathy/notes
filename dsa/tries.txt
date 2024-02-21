@@ -1,0 +1,27 @@
+TRIES
+-----
+
+WHEN
+  search dictionary for strings
+  prefix search for strings
+
+
+Node {
+  map<char, Node>
+  bool is_word
+}
+
+map can be array since chars are 256
+
+INSERT
+------
+
+add node for every char in string
+extra node at end marking is_word = true
+
+SEARCH
+------
+
+check for every char in strings
+then check is_word, if true, true
+if char not found in node, false

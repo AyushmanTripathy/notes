@@ -1,0 +1,10 @@
+DYNAMIC PROGRAMMING
+-------------------
+
+WHEN
+  problem reduced to sub problems
+HOW
+  memoization
+
+no of possiblites -> end goal be 1, sum of possbilities
+

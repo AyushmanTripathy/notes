@@ -3,7 +3,8 @@ LINKED LIST
 
 WHEN
   elements have to be kept in order
-  and order can be changed in O(1)
+  and length can be changed in O(1)
+
 HOW
   each node has a val and a next pointer
 
@@ -30,3 +31,14 @@ duplicate values -> cycles in list
 WHEN
   finding duplicates
 
+MERGING K LISTS
+---------------
+time: O(n * logk)
+space: O(1)
+
+while (k > 1) {
+  for (int i = 0; i < k / 2; i++)
+    lists[i] = merge_list(lists[i], lists[k - i - 1])
+  k = (k + 1) / 2
+}
+return lists[0]

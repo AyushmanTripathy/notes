@@ -1,12 +1,13 @@
 TREE
 ----
 
-Breath First Search
--------------------
 
-add root to queue
-until queue is empty
-foreach ele in queue
-  add childrens to queue
-increment level counter
+CHECK FOR BST
+-------------
 
+bool g(TreeNode * n, long min, long max) {
+    if (n == nullptr) return true;
+    if (n->val > min && n->val < max)
+        return g(n->left, min, n->val) && g(n->right, n->val, max);
+    return false;
+}

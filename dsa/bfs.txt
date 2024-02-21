@@ -1,0 +1,33 @@
+BREATH FIRST SEARCH
+-------------------
+
+WHEN
+  related to level wise
+HOW
+  push to, pop from queue
+
+O(n) time and O(n) space
+
+STRUCTURE
+---------
+// convert tree into array
+
+nodes = [];
+deque<Node *> que;
+
+if (n == nullptr) return nodes;
+que.push_back(n);
+
+while(!que.empty()) {
+  for (int i = que.size(); i > 0; i--) {
+    n = que.front();
+    que.pop_front();
+
+    if (n->left) que.push_back(n->left);
+    if (n->right) que.push_back(n->right);
+
+    nodes.push_back(n);
+  }
+}
+
+return nodes;

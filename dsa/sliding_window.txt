@@ -17,8 +17,14 @@ subset of dynamic programming
 
 DYNAMICALLY SIZED
 -----------------
+  longest palindromic substring
+    take every char to be center
+    check for plaindrome, l, r = i, i
+    dont forget even len case, l, r = i, i + 1
+
   summation (non negative)
     shrink or exapand depending on sum
+  
   summation (with negative)
     add the min value to the array
     i.e. convert to non negative array
