@@ -9,6 +9,22 @@ HOW
 
 generally O(n) time and O(1) space
 
+MIN OF MAXS
+  for each index, leftMax and rightMax are required
+
+  simple -> calculate two arrays
+  
+  l, r = 0, n - 1
+  leftMax, rightMax = nums[0], nums[n - 1]
+
+  while r < l:
+    if leftMax >= rightMax:
+      leftMax = min(leftMax, nums[l])
+      l += 1
+    else: 
+      rightMax = min(rightMax, nums[r])
+      r -= 1
+
 3SUM
   select 3 nums such that sum is 0
 
