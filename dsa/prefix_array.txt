@@ -1,0 +1,14 @@
+PREFIX ARRAY
+------------
+
+WHEN
+  sum, freq etc in a range
+
+HOW
+  quntity in range [i, j]
+  [i, j] = [0, n) - [0, i) - (j, n)
+
+O(n) time and O(n) space
+
+prefix[0] = 0
+prefix[i] = prefix[i - 1] + arr[i - 1]
