@@ -1,0 +1,24 @@
+FFMPEG
+  converts media into seprate audio and video packets called demuxer
+  decoder decodes them into uncompressed frames
+  changes are made
+  encoder then muxer to generate output
+
+  comes with
+  ffplay: play media file
+  ffprobe: meta data
+
+OPTIONS
+  -i input files
+  -b bitrate "-b:v 1M"
+  -r framerate "-r 30"
+  -s resolution "-s 640x480"
+  -ss start time
+  -to end time
+  -t duration
+
+CONCAT
+  make txt file with name of files
+  "file name.mp4"
+  command is
+    ffmpeg -i vids.txt -f concat -c copy
