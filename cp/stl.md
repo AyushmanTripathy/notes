@@ -32,16 +32,18 @@ for (auto pair : map)
     cout << pair.first << pair.second << endl;
 ```
 
+map is self balancing tree
+
 #### Hash Sets
 
 ```cpp
-unordered_set<string> set;
+unordered_set<string> s;
 
-map.insert(key) //add key to set 
+s.insert(key) //add key to set 
 
-if (set.find(key) != set.end()) //check for set in map
+if (s.find(key) != s.end()) //check for set in map
 
-for (auto key : set)
+for (auto key : s)
     cout << key << endl;
 ```
 

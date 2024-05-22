@@ -177,3 +177,27 @@ each neuron has
 -   these optimisations involves a `gradient descent` approach
 -   changes to weights are `backpropagated` through the network
 -   repeated for `epochs` (iterations) untill loss is minimized
+
+# Large Language Models
+
+ML models for natural language processing tasks (NLP)
+Transformer models are trained with large volumes of texts
+Transformer model architecture consists of 
+
+1. Encoder, creates semantic respresentation of text
+1. Decoder, generates language sequences
+
+BERT (Bidirectional Encoder Representation) by google for search engines
+GPT (Generative Pretrained Transformer) by OpenAI
+
+### Tokenization
+
+text is divided into tokens
+can be word, combination of words, punctuations
+with training text, vocabulary can be increased
+
+### Embeddings
+
+each token has a associated numeric vector
+each numeric elements represents a attribute
+hence related tokens have similar embedding
