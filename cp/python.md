@@ -1,5 +1,25 @@
 # PYTHON
 
+### sorting
+
+- in place sorting
+
+```
+nums.sort()
+```
+
+- using sorted (no inplace sorting)
+
+```
+arr2 = sorted(arr1)
+```
+
+- key function in boths ways
+
+```
+sorted(arr, key = lambda x : x[0] + x[1])
+```
+
 ### Zipping
 
 - can be used for sorting dicts
@@ -37,6 +57,15 @@ def foo(**kargs):
 ```
 
 ### heapq
+
+- inserting and deleting element
+- do -1 * for max heap
+
+```py
+heapq.heapify(heap)
+heapq.heappush(heap, n)
+n = heapq.heappop(heap)
+```
 
 - getting n largest or smallest num
 

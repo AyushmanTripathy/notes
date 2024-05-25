@@ -1,5 +1,23 @@
 # Competative Programming
 
+#### Max Heap
+
+```cpp
+vector<int> v { ... };
+
+// init
+make_heap(v.begin(), v.end())
+
+//push
+v.push_back(n)
+push_heap(v.begin(), v.end())
+
+//pop
+pop_heap(v.begin(), v.end())
+n = v.back()
+v.pop_back()
+```
+
 #### Deque
 
 ```cpp

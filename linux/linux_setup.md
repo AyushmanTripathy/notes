@@ -6,6 +6,14 @@ in /etc/pacman.conf uncomment the line
 #ParallelDownloads = 5
 ```
 
+## Yay
+
+```
+git clone https://github.com/Jguer/yay --depth 1
+cd yay
+makepkg -si
+```
+
 ## TIME
 
 add cron task for every minute
@@ -121,8 +129,8 @@ change permission for /media `chown -R ayush:ayush /media`
 1. chromium [web browser]
 1. mpv [media player]
 1. sxiv [image viewer]
-1. slock [lock screen]
-1. st [terminal emulator]
+1. alacrity [terminal emulator]
+1. pinta [image editor]
 
 #### tui programs
 
@@ -133,6 +141,7 @@ change permission for /media `chown -R ayush:ayush /media`
 
 #### tools
 
+1. slock [lock screen]
 1. tree [listing directories]
 1. pandoc [opening .docx, .pptx]
 1. openssh [ssh client and daemon]
@@ -143,7 +152,6 @@ change permission for /media `chown -R ayush:ayush /media`
 1. udisks2 [usb ejection]
 1. zip and unzip [working with .zips]
 1. fzf [fuzzy finder]
-1. speedtest-cli [testing network speeds]
 1. qrencode [qrcodes]
 
 1. xdotool [automations]
