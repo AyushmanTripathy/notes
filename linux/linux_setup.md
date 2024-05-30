@@ -62,9 +62,9 @@ systemctl start bluetooth
 
 ## TOUCHPAD
 
-required package: `xf86-input-synaptics`
+required package: `libinput`
 
-note: libinput is something
+note: `xf86-input-synaptics` is something
 in /etc/X11/xorg.conf.d/70-synaptics.conf
 
 ```
@@ -115,6 +115,8 @@ change permission for /media `chown -R ayush:ayush /media`
 1. exfatprogs
 1. dosfstools
 1. ntfsprogs
+
+1. jmtpfs (aur)
 
 ## Other Packages I use
 
