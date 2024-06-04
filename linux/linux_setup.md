@@ -93,6 +93,7 @@ EndSection
 ## EMOJIS
 
 required packages: `noto-fonts-emoji`
+required packages: `noto-fonts` (other languages)
 
 ## NOTIFICATION
 
@@ -106,6 +107,17 @@ required packages: `cronie`
 systemctl enable cronie
 systemctl start cronie
 ```
+
+## Fonts
+
+- put your fonts in `/usr/share/fonts`
+- to install
+
+```
+sudo fc-cache -fv
+```
+
+- to preview use `display`
 
 ## FileSystem Tools
 
