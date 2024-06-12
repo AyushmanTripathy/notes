@@ -54,7 +54,34 @@ setX((x) => x + 1);
 1. rendering, is calling the component, whoose state changed
 1. commiting, apply operations to make same as last rendered output
 
+### Hooks
+
+-   allow you to use react's features
+-   called immediately inside a component (no conditional or loops)
+
 ### useContext hook
+
+-   pass state to entire sub tree
+-   adapting to situations
+-   creating a context in a file
+
+```js
+export const StateContext = createContext(initialState);
+```
+
+-   parent has to provide context's value to children
+
+```js
+<StateContext.Provider value={stateValue}>...</StateContext.Provider>
+```
+
+-   context can be used in a child by importing it and
+
+```js
+const state = useContext(StateContext);
+```
+
+-   try passing jsx as children before doing this
 
 ### useReducer hook
 
