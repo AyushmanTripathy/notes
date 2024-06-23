@@ -17,3 +17,7 @@ console.log(x("ayush")) // hello ayush
 ```
 
 here greator creates a closure
+
+## Monads
+
+

@@ -1,6 +1,6 @@
 # Machine Learning
 
-from [Fundamentals of Machine Learning](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/)
+from: [Fundamentals of Machine Learning](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/)
 
 ```
 y = f(x)

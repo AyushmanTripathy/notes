@@ -1,5 +1,9 @@
 # Lua Programming langauge
 
+from: [Programming in Lua](https://lua.org/pil/contents.html)
+
+### Description
+
 -   made in brazil
 -   extension scritpting lanugague
 -   garbage collected
@@ -13,7 +17,7 @@
 --]]
 ```
 
-### Variables
+## Variables
 
 -   default value is `nil`
 -   to delete a varibale assign it `nil`
@@ -40,7 +44,7 @@ end
 
 -   functions are first class and can be assigned to varibales
 
-### Types
+## Types
 
 -   can be determined by `type` function
 
@@ -104,7 +108,7 @@ a.x = 10
 for i, x in ipairs(a) do print(x) end
 ```
 
-### Expressions
+## Expressions
 
 -   all arithmatic operators (`^` is not implemented)
 -   all relational operators (`~=` is not equal)
@@ -125,7 +129,7 @@ map = { first="james", last="bond" }
 
 -   if key not passed, they are indexed
 
-### Statements
+## Statements
 
 -   mutiple assignments like python
 
@@ -151,7 +155,7 @@ for key in pairs(table) do print(key) end   --loop for all keys in table
 do return end
 ```
 
-### Function
+## Function
 
 - parenthesis are optional
 - syntax to call func with obj as first parameter
