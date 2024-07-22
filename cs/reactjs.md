@@ -80,7 +80,7 @@ export const StateContext = createContext(initialState);
 -   parent has to provide context's value to children
 
 ```js
-<StateContext.Provider value={stateValue}>...</StateContext.Provider>
+<StateContext.Provider value={stateValue}> .... </StateContext.Provider>
 ```
 
 -   context can be used in a child by importing it and

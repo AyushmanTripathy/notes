@@ -4,6 +4,8 @@ FFMPEG
   changes are made
   encoder then muxer to generate output
 
+  -pix_fmt yuv420p for android support
+
   comes with
   ffplay: play media file
   ffprobe: meta data
@@ -41,11 +43,24 @@ ROTATING
   2 = 90° counterclockwise
   3 = 90° clockwise and vertical flip
 
-ADD
-  replace audio stream
+MAP STREAMS
+  to replace audio stream
 
   ffmpeg -i video.mp4 -i audio.wav -map 0:v -map 1:a -c:v copy -shortest output.mp4
 
-  if you want to add audio stream without replacing, instead of 
+  use ffprobe to get info about the streams
+  everycommand except 1st removes the metadata
+  
+  -map 0    (grab everything from 1st input including metadata)
+  -map 0:v  (grab video from 1st input)
+  -map 0:a  (grab all audio streams)
+  -map 0:1  (grab 1st stream)
+  -map -0:1 (remove 1st stream)
 
-  -map 0:v replace by -map 0
+CROPING
+  to change resolution of video
+  x, y are cordinates of top left edge of h, w selection
+  use ffprobe to get resolution and calculate x, y, h, w
+  vertical video is 9/16, horizontal is 16/9
+
+  ffmpeg -i input.mp4 -vf "crop=w=607:h=1080:x=896:y=0" -c:v libx265 output.mp4
