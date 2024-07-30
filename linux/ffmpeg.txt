@@ -64,3 +64,8 @@ CROPING
   vertical video is 9/16, horizontal is 16/9
 
   ffmpeg -i input.mp4 -vf "crop=w=607:h=1080:x=896:y=0" -c:v libx265 output.mp4
+
+SPEEDING UP
+  number required is 1/x
+  
+  ffmpeg -itsscale 0.01666 -i input.mkv -c copy output.mkv
