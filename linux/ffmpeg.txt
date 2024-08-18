@@ -69,3 +69,6 @@ SPEEDING UP
   number required is 1/x
   
   ffmpeg -itsscale 0.01666 -i input.mkv -c copy output.mkv
+
+  fix PTS error
+  ffmpeg -i in.mp4 -fps_mode drop 2.mp4

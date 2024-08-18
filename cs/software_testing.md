@@ -72,7 +72,7 @@ Test design is the most critical job, because Pareto principle
 `Controllability` ease to provide needed inputs  
 together they mean Testibility.
 
-#### RIPR Model
+### RIPR Model
 
 conditions required for failure to be observed
 
@@ -84,10 +84,43 @@ conditions required for failure to be observed
 ### Model Based Testing
 
 working with models of software artifact and deriving test cases.  
+better because errors can be caught earlier.
+
+`MODEL` represents software artifacts or its abstraction  
 models can be
 
 1. formal, mathmatical notations
 1. modelling languages (UML, SysMl, Simulink)
+
+models that will work with
+
+1. Graphs: control flow graphs
+1. Logical Expressions: predicates that decide flow
+1. Sets: input domains for black box
+1. Grammers: language specific
+
+### Criteria 
+
+- `Criteria` define requirements for test case design
+- `Predicate Coverage` means covering both branches
+- `Coverage Criterion` rules that impose requirements on set of test cases
+
+A criterion C1 `subsumes` C2, if test cases the satisfy C1 also satisfy C2. typically defined for feasible criterion.
+
+### Test automation
+
+
+`Prefix values` inputs necessay to put software into appropriate state to receive test case values.  
+`Postfix values` inputs that are sent after test case values, 2 types
+
+1. `Verification values` to see results of test case
+1. `Exit values` to return program to stable state
+
+### JUnit
+
+- open source java testing framework
+- uses `Assertion` for testing expected results
+- for unit and integration testing
 
 ## Miscs
 
