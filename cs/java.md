@@ -154,7 +154,24 @@ types of constructors,
 new ClassName().method();
 ```
 
+## Polymorphism
+
+2 types in Java
+
+### Overloading
+
+- for method or constructor
+- same class, different function signatures
+- no, type and order of arguments
+- return type doesn't count
+
+### Overriding
+
+- for only method
+- same function signatures, different class
+
 # Mics
 
 - called `extends` because all classes extend from Object already. 
 - default value for reference variables is null.
+- Java has J capital
