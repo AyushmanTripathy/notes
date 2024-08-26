@@ -25,6 +25,37 @@ float x = 1.0f;
 - all have wrapper types, Integer, Float, Boolean etc.
 - all wrapper types are child of `Number` class, except Character.
 
+### Break Label
+
+- used to break out of outer loops
+
+```java
+label:
+while (true) {
+    while (true) {
+        break label;
+    }
+}
+```
+
+### Final
+
+- final methods prevents overriding (methods on Objects)
+- final classs prevents inheritane (Wrapper classes)
+
+#### final variables 
+
+- can be initialized once
+- naming convention is upper snake case
+- legal examples
+
+```java
+final double PI;
+PI = 3.14;
+
+for (final int i : arr);
+```
+
 ## Arrays
 
 - are themselves Objects
@@ -59,8 +90,11 @@ System.out.println(arr) //[I@17211155
 
 ```java
 int a[][] = new int[2][];
-int a[0] = new int[3];
-int a[1] = new int[2];
+a[0] = new int[3];
+a[1] = new int[2];
+
+// OR
+int a[][] = { new int[2], new int[4] };
 ```
 
 ## String
@@ -119,6 +153,20 @@ types of constructors,
 
 - Constructors can be overloaded based on no of args and their types
 - return value is the object created.
+
+### Initializer Blocks
+
+- runs before the constructor
+- used for code common to all constructors
+
+```java
+class Class {
+    int x;
+    {
+        x = 10;
+    }
+}
+```
 
 ## Objects
 
