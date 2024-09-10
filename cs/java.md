@@ -218,6 +218,27 @@ new ClassName().method();
 - for only method
 - same function signatures, different class
 
+### This
+
+- added to variables and methods by compiler, if no name collision
+- for refering instance variable with same name
+
+```
+this.name = name;
+```
+
+- reusing constructors
+- call to `this()` must be the first line
+
+```
+Student(int x) {}
+Student(int x, int y) { this(x); }
+```
+
+### Super
+
+- added by compiler, to default constructor
+
 # Mics
 
 - called `extends` because all classes extend from Object already. 
