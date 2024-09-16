@@ -10,6 +10,14 @@
 - rw- rw- r--
 ```
 
+- each group is represent by 3 bits
+- number from bits will then give
+
+```
+rw- => 110 => 6
+rwxrwxr-x => 775
+```
+
 ### Using chmod
 
 -   three user categories

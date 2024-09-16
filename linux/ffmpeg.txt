@@ -26,7 +26,7 @@ CONCAT
   make txt file with name of files
   "file name.mp4"
   command is
-    ffmpeg -i vids.txt -f concat -c copy
+    ffmpeg -f concat -i vids.txt out.mp4
   
   convert all .mp4 to .ts then concat
   

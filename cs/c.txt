@@ -173,3 +173,6 @@ STDLIB FUNCTIONS
   STDIO
     int printf(char *, );   returns no of chars printed
     int scanf(char *, );    returns no of inputed scanned
+
+MISCS
+  the value of the expression (a=b) is the value of a after the expression has been evaluated

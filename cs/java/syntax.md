@@ -2,28 +2,7 @@
 
 The worst programming language
 
-# Types
-
-## Primitives
-
-1. byte
-1. short
-1. int
-1. long
-1. float
-1. double
-1. char (2 bytes, for unicode)
-1. boolean (size is not defined)
-
-- floats have to be typecasted
-
-```java
-float x = (float) 1.0;
-float x = 1.0f;
-```
-
-- all have wrapper types, Integer, Float, Boolean etc.
-- all wrapper types are child of `Number` class, except Character.
+## Keywords
 
 ### Break Label
 
@@ -99,10 +78,10 @@ int a[][] = { new int[2], new int[4] };
 
 ## String
 
-- java has no operator overloading
+- Java has no operator overloading
 - exception is `+` for strings
 
-# Operators
+## Operators
 
 - relational operators donot work for boolean
 - increment operator cannot be chained or applied to constants
@@ -238,6 +217,38 @@ Student(int x, int y) { this(x); }
 ### Super
 
 - added by compiler, to default constructor
+- used to call the parent class constructor
+
+## Inheritance
+
+### Interface
+
+- until java v1.7, non abstract methods are not supported.
+- every variable is public static final
+- every function is by default public abstract
+- to prevent use `default` keyword
+
+```java
+interface Name {
+    int x;
+    void m();
+    default void n() {
+    }
+    static void o() {
+        //public static non abstract
+        //abstract is not possible
+    }
+}
+```
+
+### Abstract Class
+
+- instance cannot be created
+- can be inherited
+
+```
+abstract class Name {}
+```
 
 # Mics
 

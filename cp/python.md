@@ -16,9 +16,18 @@ arr2 = sorted(arr1)
 
 - key function in boths ways
 
-```
+```python
+def keyFunc(x):
+    return x[0] + x[1]
+arr.sort(key = keyFunc)
+
+# or
+
 sorted(arr, key = lambda x : x[0] + x[1])
 ```
+
+- use `reverse=True` for reverse
+- for string, multiple levels of sorting = concating strings
 
 ### Zipping
 
@@ -72,4 +81,17 @@ n = heapq.heappop(heap)
 ```py
 heapq.nlargest(3, arr)
 heapq.nsmallest(3, arr)
+```
+
+### set
+
+```py
+a|b #a union b
+a^b #a symmetric difference b, a u b - a n b
+
+
+17, 19, 42, 25, 38, 89, 54, 98, 89, 67 
+
+58, 29, 24, 67, 52, 89, 45, 98, 79, 13 
+
 ```
