@@ -17,6 +17,29 @@ while (true) {
 }
 ```
 
+### This
+
+- added to variables and methods by compiler, if no name collision
+- for refering instance variable with same name
+
+```
+this.name = name;
+```
+
+- reusing constructors
+- call to `this()` must be the first line
+
+```
+Student(int x) {}
+Student(int x, int y) { this(x); }
+```
+
+### Super
+
+- added by compiler, to default constructor
+- used to call the parent class constructor
+- child class first line must be call to super()
+
 ### Final
 
 - final methods prevents overriding (methods on Objects)
@@ -76,11 +99,6 @@ a[1] = new int[2];
 int a[][] = { new int[2], new int[4] };
 ```
 
-## String
-
-- Java has no operator overloading
-- exception is `+` for strings
-
 ## Operators
 
 - relational operators donot work for boolean
@@ -95,66 +113,6 @@ obj instanceof cls
 - gives true if cls is class or super class of obj
 - if not gives error
 - gives false for null
-
-# Class & Objects
-
-## Class
-
-- blueprint of an object
-- its only a logical entity
-
-```java
-class ClassName {
-    //feilds
-    //methods
-}
-```
-
-- `Instance variables` declared in class, outside methods
-- they get memory when object is created.
-
-### Constructors
-
-- block of code, called when object is created
-- default no arg constructor for every class
-
-rules for constructors,
-
-1. no explicit prototype (return type)
-1. name is same as class name
-1. can have access modifiers
-1. cannot use abstract, static, final, synchronized
-
-types of constructors,
-
-1. no arg or non parameterised
-1. parameterised
-
-- Constructors can be overloaded based on no of args and their types
-- return value is the object created.
-
-### Initializer Blocks
-
-- runs before the constructor
-- used for code common to all constructors
-
-```java
-class Class {
-    int x;
-    {
-        x = 10;
-    }
-}
-```
-
-## Objects
-
-- instance of class
-- logical and physical entity
-- it has `state` and `behaviour`
-- can have their own propertise
-- stored in heap memory and used by `reference` variables.
-- reference variables are stored in stack memory.
 
 ## Variables
 
@@ -179,75 +137,6 @@ class Class {
 
 ```java
 new ClassName().method();
-```
-
-## Polymorphism
-
-2 types in Java
-
-### Overloading
-
-- for method or constructor
-- same class, different function signatures
-- no, type and order of arguments
-- return type doesn't count
-
-### Overriding
-
-- for only method
-- same function signatures, different class
-
-### This
-
-- added to variables and methods by compiler, if no name collision
-- for refering instance variable with same name
-
-```
-this.name = name;
-```
-
-- reusing constructors
-- call to `this()` must be the first line
-
-```
-Student(int x) {}
-Student(int x, int y) { this(x); }
-```
-
-### Super
-
-- added by compiler, to default constructor
-- used to call the parent class constructor
-
-## Inheritance
-
-### Interface
-
-- until java v1.7, non abstract methods are not supported.
-- every variable is public static final
-- every function is by default public abstract
-- to prevent use `default` keyword
-
-```java
-interface Name {
-    int x;
-    void m();
-    default void n() {
-    }
-    static void o() {
-        //public static non abstract
-        //abstract is not possible
-    }
-}
-```
-
-### Abstract Class
-
-- instance cannot be created
-- can be inherited
-
-```
-abstract class Name {}
 ```
 
 # Mics
