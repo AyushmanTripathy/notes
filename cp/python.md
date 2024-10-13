@@ -114,6 +114,17 @@ def foo(**kargs):
         print(kargs[arg])
 ```
 
+### Colon Equal `:=`
+
+- used to set a variable within a expression
+- evaluates to value that was set
+
+```
+print(n := 10) #10
+n := 10        #gives an error
+(n := 10)      #valid
+```
+
 ### heapq
 
 -   inserting and deleting element
