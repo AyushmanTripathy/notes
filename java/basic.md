@@ -11,13 +11,36 @@
 1. char (2 bytes, for unicode)
 1. boolean (size is not defined)
 
-- floats have to be typecasted
+-   floats have to be typecasted
 
 ```java
 float x = (float) 1.0;
 float x = 1.0f;
 ```
 
-- all have wrapper types, Integer, Float, Boolean etc.
-- all wrapper types are child of `Number` class, except Character.
+### Wrapper Classes
 
+-   primitives have wrapper types, Integer, Float, Boolean etc.
+-   all wrapper types are child of `Number` class, except Character.
+-   they are interchanged automatically by java
+
+-   `Autoboxing`, primitive converted to wrapper class
+-   `Unboxing`, wrapper class converted to primitive
+
+## Generics
+
+-   generic class
+-   only reference types are allowed
+
+```java
+class Main<T> {}
+Main<Integer> m = new Main<Integer>();
+```
+
+-   generic function
+
+```java
+public <T> void func(T arg) {
+    //do something
+}
+```

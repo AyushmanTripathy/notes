@@ -42,6 +42,18 @@ Throwable
 -   cannot be one liners
 -   try must have atleast one catch or finally
 -   parent class must be caught after child class
+-   finally is executed even if try returns
+-   expression is evaluated but returned after finally
+
+```java
+try {
+    return func();
+} finally {
+    //will be executed after func()
+}
+```
+
+-   returning in finally will triumph
 
 ### Throw
 

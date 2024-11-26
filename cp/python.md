@@ -1,5 +1,14 @@
 # PYTHON
 
+### floor division
+
+- is not integral division like in c
+
+```py
+-1 // 10        # -1
+int(-1 / 10)    # 0 (correct)
+```
+
 ### sorting
 
 -   in place sorting

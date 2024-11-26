@@ -22,6 +22,9 @@ OPTIONS
   -c copy, to skip encoding
   -an remove audio
 
+GET DURATION
+  ffprobe -i clip.mp4 -show_entries format=duration -v quiet -of csv="p=0"
+
 CONCAT
   make txt file with name of files
   "file name.mp4"

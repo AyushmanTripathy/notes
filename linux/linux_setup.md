@@ -110,14 +110,14 @@ systemctl start cronie
 
 ## Fonts
 
-- put your fonts in `/usr/share/fonts`
-- to install
+-   put your fonts in `/usr/share/fonts`
+-   to install
 
 ```
 sudo fc-cache -fv
 ```
 
-- to preview use `display`
+-   to preview use `display`
 
 ## FileSystem Tools
 
@@ -129,6 +129,14 @@ change permission for /media `chown -R ayush:ayush /media`
 1. ntfsprogs
 
 1. jmtpfs (aur)
+
+## Discord
+
+-   in `.config/discord/settings.json`
+
+```
+"SKIP_HOST_UPDATE": true,
+```
 
 ## Other Packages I use
 

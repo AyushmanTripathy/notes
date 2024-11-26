@@ -62,10 +62,21 @@ class Class {
 Class obj = new Class();
 ```
 
-- `public String toString()` is used to print a object
-- references can be identified by hash code.
+-   `public String toString()` is used to print a object
+-   references can be identified by hash code.
 
 ```java
 System.identityHashCode(ref);
 Object.hashCode(ref); //calls the above
+```
+
+### finalize()
+
+-   called when a object is about to garbage collected
+-   may never be called incase reference is always present
+-   not like a deconstructor
+-   bad idea to depend on them
+
+```java
+protected void finalize() throws Throwable
 ```
