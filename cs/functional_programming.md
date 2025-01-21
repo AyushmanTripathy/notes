@@ -21,7 +21,9 @@ here greator creates a closure
 ## Functor
 
 A Functor is a type that supports the map operation (and some mathmatical properties).
-Its a superset of Monads
+Its a superset of Monads  
+
+return type of map function is the Functor itself
 
 ## Monads
 

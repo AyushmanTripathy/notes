@@ -22,6 +22,14 @@ add cron task for every minute
 pkill -RTMIN+9 dwmblocks
 ```
 
+## Docker
+
+re login after, adding user to docker group
+
+```
+sudo usermod -aG docker ayush
+```
+
 ## BRIGHTNESS
 
 1. add rule to udevs

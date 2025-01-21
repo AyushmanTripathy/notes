@@ -2,6 +2,11 @@ from :- Distrotube
 
 SED "String Text Editor"
 
+NOT PER LINE
+  considers delimiter as \0 instead of \n
+
+  sed -z " "
+
 SUBSTITUTION
   substitution once per line
   sed 's/find/replace/'

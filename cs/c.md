@@ -115,6 +115,16 @@ const int * ptr; // can be changed
 int * const ptr; // cannot be changed
 ```
 
+## POINTERS ARITHMATICS
+
+- ints are always stored in little endian (least first)
+
+```
+unsigned int a = 256;
+unsigned char * b = (void *) &a + 1;
+printf("%d\n", *b); //1
+```
+
 ## DEREFRENCING
 
 -   getting the value stored at a memmory address
@@ -188,7 +198,7 @@ free(me);
 
 ```
 void (*p)(int);
-p = &function_name;
+p = function_name;
 (p)(1);
 ```
 
