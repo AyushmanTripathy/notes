@@ -1,4 +1,4 @@
-## Passwords
+# Passwords
 
 1. Encrpted Passwords
     - passwords are encrypted with a key
@@ -16,7 +16,7 @@
     - here hash functions are slow, to prevent brute forcing
     - ex: bcrypt, Aargon
 
-### bcrypt
+## bcrypt
 
 - cost can be increased to make it slower
 
@@ -25,5 +25,3 @@ $2a$12$R9h/cIPz0gi.URNNX3kh2OPST9/PgBkqquzi.Ss7KIUgO2t0jWMUW
 \__/\/ \____________________/\_____________________________/
 Alg Cost      Salt                        Hash
 ```
-
-## OAuth

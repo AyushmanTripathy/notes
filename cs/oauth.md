@@ -49,3 +49,4 @@ You authorise a application to use resources of another application on your beha
 
 1. client uses a `openid` scope
 1. client receives a id token along with a access token
+1. id token 

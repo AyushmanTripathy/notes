@@ -8,15 +8,17 @@
 
 1. UDP
     - just end to end packet delivery
-    - ex: DNS
+    - ex: DNS, SNMP
 1. TCP
     - ordered packet delivery, reliable, connections etc.
-    - ex: everything else
+    - ex: DNS, everything else
 
 ## DNS (Domain Name system)
 
 - mapping domain names to IP address
-- uses UDP
+- inverse mapping is also avaliable
+- each domain name served by 2 DNS servers
+- uses TCP or UDP
 
 ### Parties
 
@@ -59,7 +61,64 @@
 - if matched, cache is poisioned with your IP
 - TTL can be set high so that cache remains as such
 
+## Client Server Paradigm
+
+- client & server are different process
+- server is always listening for requests
+- two types
+    1. iterative, single server process handles all requests
+    1. concurrent, child server process for each requests
+
 ## FTP (File Transfer Protocol)
 
 - connection based, uses TCP
-- TFTP is connection less, uses UDP
+- TFTP is connection less, uses UDP, uses 69
+- makes two connections
+    1. control connection, port 21
+    1. data connection, port 20, unidirectional
+
+## HTTP (Hypertext Tranfer Protocol)
+
+- transport protocol independent
+- supports mutiple request/reply over single connection
+- default port is 80
+- components
+    - URL (protocol://host:port/path)
+    - Cookie
+- document types
+    - static page 
+    - dynamic page  (server site scripting)
+    - active page   (client site scripting)
+
+### HTTP Proxy Server
+
+```
+client <-> proxy <-> server
+```
+## SMTP (Simple Mail Transfer Protocol)
+
+- port 25
+
+### MIME (Multipurpose internet mail extension)
+
+- allows support for non ASCII (images, audio, etc)
+- has headers, like http
+
+### Mail Accress Protocol
+
+- retrives email from user's mailbox
+- types
+    1. POP3 (Post Office Protocol)
+        - allows users to get a list of emails
+        - retrieve their email
+        - delete/keep emails
+    1. IMAP4 (Internet Mail Access Protocol v4)
+        - has more features
+        - headers can be checked before downloading
+        - users can download parts of emails
+
+## SNMP (Simple Network Managment Protocol)
+
+- montior and manage networks
+- SNMP manager and some SNMP agent
+- uses UDP
