@@ -19,7 +19,9 @@
     - avoids congestion on junctions
 1. Ordered Packet delivery
 
-## Delayed Duplicated Delivery
+## Connection Establistment
+
+### Delayed Duplicated Delivery
 
 - to ensure reliability, packets are resend after a timeout
 - differentiating between such packets is different
@@ -69,12 +71,16 @@ seq no is ex: 500, means 500 - 600 bytes are present here
 
 ### deciding initial sequence no
 
+- goal is to make seq no unqiue for each byte in a network, at any time
 - problem of crashing
 
 ![problem of client crashing](../media/21d1cf8a.jpg)
 
 - 2 solutions
 - wait for packets to die off completely
+- if the new connection sends too much data too fast
+- it can forbidden range can still overlap
+- same problem if data is send too slow in previous connection
 
 ![waiting for packets to die](../media/a448ef5c.jpg)
 
@@ -83,3 +89,59 @@ seq no is ex: 500, means 500 - 600 bytes are present here
 ![choosing a higher seq no](../media/f90c0746.jpg)
 
 - here the range between two connections is `forbidden range`
+
+### Self Clocking
+
+- `clock tick` inter packet transmission duration
+- only one segment per clock tick
+- data is transmissted at bounded rate to prevent seq no wrap around
+
+### Three Way Handshake
+
+- ensure that receiver doesnot need to remember seq no.
+- provides `positive syncronisation`
+
+- host 1 sends SYN x
+- host 2 reply with an ACK x, and SYN y
+- host 1 then sends ACK y with SYN x
+
+- ACK denotes, what seq no a host is expecting
+- if received SYN and ACK is invalid we know its a delayed duplicate
+
+## Connection Release
+
+### Asymmetric Release
+
+- if one pary releases connection, its broken
+- this can lead to data loss
+
+- Two army problem
+    - two army in the hills needs to attack simultaneously
+    - but another army is in the valley
+    - no protocol exists for this case
+
+### Symmetric Release
+
+- treats connections as two unidirectional connections
+- both need to release separetly
+- good when, each process know how data it needs to be know
+
+- how release works
+    - host 1 initiates
+        - sends FIN
+        - waits for ACK
+    - host 2 will recieve FIN
+        - send a ACK
+        - starts releasing connection
+        - sends FIN after that
+    - host 1 after recieving ACK
+        - waits for FIN
+    - host 1 recives FIN
+        - release connection
+        - connection is closed
+
+- incase packets fail
+    - host 1 will send FIN for N times with timeouts in between
+    - if all timeouts fail, it will release
+    - host 2 once its receives a FIN, will set timeout
+    - if timeout fails, it will release
