@@ -71,15 +71,15 @@ seq no is ex: 500, means 500 - 600 bytes are present here
 
 - problem of crashing
 
-![problem of client crashing](../media/./networks/transport.md)
+![problem of client crashing](../media/networks/transport.md)
 
 - 2 solutions
 - wait for packets to die off completely
 
-![waiting for packets to die](../media/./networks/transport.md)
+![waiting for packets to die](../media/networks/transport.md)
 
 - choose a different higher seq no
 
-![choose a higher seq no](../media/./networks/transport.md)
+![choose a higher seq no](../media/networks/transport.md)
 
 - here the range between two connections is `forbidden range`
