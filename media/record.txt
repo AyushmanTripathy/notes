@@ -1,0 +1,3 @@
+1d40bb2f.jpg|./networks/transport.md|problem of client crashing
+27f0b178.jpg|./networks/transport.md|waiting for packets to die
+c69d968e.jpg|./networks/transport.md|choose a higher seq no
