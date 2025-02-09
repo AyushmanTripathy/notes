@@ -127,6 +127,7 @@ seq no is ex: 500, means 500 - 600 bytes are present here
 - good when, each process know how data it needs to be know
 
 - how release works
+
     - host 1 initiates
         - sends FIN
         - waits for ACK
@@ -145,3 +146,37 @@ seq no is ex: 500, means 500 - 600 bytes are present here
     - if all timeouts fail, it will release
     - host 2 once its receives a FIN, will set timeout
     - if timeout fails, it will release
+
+## Flow Control & Reliablity
+
+- ensures the data transmission is not more that what receiver can receive.
+- at both data link and transport layer
+- if implemented only at data link layer, buffers at router will overflow.
+- if implemented only at transport layer, incoming rate is more than outgoing rate in a router.
+
+### Stop and wait (Automatic Repeat Request)
+
+- after sending one frame, we wait for ACK
+- after timeouts we resend the frame
+- we only need seq no 0 and 1
+
+- for directional, we need two instances
+
+### Sliding Window Protocol
+
+- parrallely sending and receiving, packets and ACKs.
+- sending N (window size) without waiting for ACK
+- after receiving ACK we reduce the window.
+- `Outstanding Frames` are frames that are transmitted but not ACK'd
+
+- MAX SEQ is 2 ^ n, for n bit seq no
+- in case of timeouts
+    1. go back n arq, if a frame is lost, all frames are retransmitted
+        - window size is MAX SEQ - 1
+    1. selective repeat arq, only lost frames are retransmitted
+        - NAK (SACK), receiver sends which frames are lost
+        - if all frames received, one (cumulative) ACK with next seq no
+        - if a frame is not received, NAK with the seq no
+        - window size if (MAX SEQ + 1) / 2
+
+ 
