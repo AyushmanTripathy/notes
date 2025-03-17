@@ -1,3 +1,7 @@
 21d1cf8a.jpg|./networks/transport.md|problem of client crashing
 a448ef5c.jpg|./networks/transport.md|waiting for packets to die
 f90c0746.jpg|./networks/transport.md|choosing a higher seq no
+f931de73.jpg|./networks/tcp.md|Connection Establistment 3 way
+8a8b25f6.jpg|./networks/tcp.md|Connection release 3 way
+e07c6675.jpg|./networks/network.md|classfull addressing format
+c627416a.jpg|./networks/network.md|subnet mark format

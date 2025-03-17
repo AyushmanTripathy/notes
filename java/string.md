@@ -23,6 +23,15 @@ String s = new String(ch);
 -   separate from heap
 -   for duplicates same reference is passed
 
+```
+String s1 = "Hello";
+String s2 = "Hello";
+String s3 = new String("Hello");
+
+s1 == s2 //true
+s1 == s3 //false
+```
+
 ## String
 
 -   immutable

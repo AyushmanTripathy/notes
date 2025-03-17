@@ -51,17 +51,22 @@
 
 ### Solution
 
-- Maximum packet lifetime, `T`
-    - time after packet is send when its completely dead
-    - packet and its anknowledgments
-- Choosing a Sequence Number
-    - label segment with a sequence number
-    - that no is not resued for T.
-    - ensures that at any time there is only one packet with unique no.
-    - size is determined by T and rate of packets per secound.
-- Properties of Sequence Number
-    - a seq no does not refer to more than one byte
-    - valid range of sequence numbers must be synchronized
+Maximum packet lifetime, `T`
+
+- time after packet is send when its completely dead
+- packet and its anknowledgments
+
+Choosing a Sequence Number
+
+- label segment with a sequence number
+- that no is not resued for T.
+- ensures that at any time there is only one packet with unique no.
+- size is determined by T and rate of packets per secound.
+
+Properties of Sequence Number
+
+- a seq no does not refer to more than one byte
+- valid range of sequence numbers must be synchronized
 
 ```
 | seq no | len | payload |
@@ -100,13 +105,14 @@ seq no is ex: 500, means 500 - 600 bytes are present here
 
 - ensure that receiver doesnot need to remember seq no.
 - provides `positive syncronisation`
+- ACK denotes, what seq no a host is expecting
+- if received SYN and ACK is invalid we know its a delayed duplicate
+
+steps
 
 - host 1 sends SYN x
 - host 2 reply with an ACK x, and SYN y
 - host 1 then sends ACK y with SYN x
-
-- ACK denotes, what seq no a host is expecting
-- if received SYN and ACK is invalid we know its a delayed duplicate
 
 ## Connection Release
 
@@ -115,10 +121,11 @@ seq no is ex: 500, means 500 - 600 bytes are present here
 - if one pary releases connection, its broken
 - this can lead to data loss
 
-- Two army problem
-    - two army in the hills needs to attack simultaneously
-    - but another army is in the valley
-    - no protocol exists for this case
+Two army problem
+
+- two army in the hills needs to attack simultaneously
+- but another army is in the valley
+- no protocol exists for this case
 
 ### Symmetric Release
 
@@ -126,26 +133,27 @@ seq no is ex: 500, means 500 - 600 bytes are present here
 - both need to release separetly
 - good when, each process know how data it needs to be know
 
-- how release works
+steps
 
-    - host 1 initiates
-        - sends FIN
-        - waits for ACK
-    - host 2 will recieve FIN
-        - send a ACK
-        - starts releasing connection
-        - sends FIN after that
-    - host 1 after recieving ACK
-        - waits for FIN
-    - host 1 recives FIN
-        - release connection
-        - connection is closed
+- host 1 initiates
+    - sends FIN
+    - waits for ACK
+- host 2 will recieve FIN
+    - send a ACK
+    - starts releasing connection
+    - sends FIN after that
+- host 1 after recieving ACK
+    - waits for FIN
+- host 1 recives FIN
+    - release connection
+    - connection is closed
 
-- incase packets fail
-    - host 1 will send FIN for N times with timeouts in between
-    - if all timeouts fail, it will release
-    - host 2 once its receives a FIN, will set timeout
-    - if timeout fails, it will release
+incase packets fail,
+
+- host 1 will send FIN for N times with timeouts in between
+- if all timeouts fail, it will release
+- host 2 once its receives a FIN, will set timeout
+- if timeout fails, it will release
 
 ## Flow Control & Reliablity
 
@@ -159,7 +167,6 @@ seq no is ex: 500, means 500 - 600 bytes are present here
 - after sending one frame, we wait for ACK
 - after timeouts we resend the frame
 - we only need seq no 0 and 1
-
 - for directional, we need two instances
 
 ### Sliding Window Protocol
@@ -168,15 +175,111 @@ seq no is ex: 500, means 500 - 600 bytes are present here
 - sending N (window size) without waiting for ACK
 - after receiving ACK we reduce the window.
 - `Outstanding Frames` are frames that are transmitted but not ACK'd
-
 - MAX SEQ is 2 ^ n, for n bit seq no
-- in case of timeouts
-    1. go back n arq, if a frame is lost, all frames are retransmitted
-        - window size is MAX SEQ - 1
-    1. selective repeat arq, only lost frames are retransmitted
-        - NAK (SACK), receiver sends which frames are lost
-        - if all frames received, one (cumulative) ACK with next seq no
-        - if a frame is not received, NAK with the seq no
-        - window size if (MAX SEQ + 1) / 2
 
- 
+TYPES
+
+1. go back n arq, if a frame is lost, all frames are retransmitted
+    - window size is MAX SEQ - 1
+1. selective repeat arq, only lost frames are retransmitted
+    - NAK (SACK), receiver sends which frames are lost
+    - if all frames received, one (cumulative) ACK with next seq no
+    - if a frame is not received, NAK with the seq no
+    - window size if (MAX SEQ + 1) / 2
+
+
+## Performance 
+
+### Bandwidth Delay Product
+
+```
+BDP = link bandwith * link delay 
+```
+
+- no of segments needed in channel, bandwith delay * 2
+- now no of bits for seq no can be calculated
+- for maximum utilisation, window sizee = 2 * BD + 1
+- ex: if BDP is less than segment size, stop and wait is used
+
+Round trip time
+
+- total time to send data & receive acknowledgement
+- twice the one way latency
+
+### Transport Buffer Pool
+
+can be
+
+1. Variable Size buffers
+    - better memory utilisation
+    - complicated implementation
+    - for each segments in a linked list
+1. Circular size buffer
+    - for each connection
+    - easier implementation
+
+## Buffer Managment
+
+required because 
+
+- because reading rate & receiving rate can be different.
+- receiver needs a dynamic buffer to store data temporarily.
+- sender should not send more data compared to buffer size.
+
+solution
+
+- continious ACKs with buffer size
+- sender waits for buffer size to be free before sending
+
+## Congestion Control
+
+problem
+
+- decentralised network, hence no algoritihm can be applied
+- cannot apply max flow min cut theorem
+- bandwith also changes after connections are added/removed.
+
+hence we can only do congestion avoidance
+
+### Congestion Avoidance
+
+regulating sending rate
+
+```
+Sending rate = min(network rate, receiving rate)
+```
+
+working
+
+- receiving rate: advertised by receiver during sliding window flow control
+- gradually increase network rate
+- observing the packet loss
+
+### Fairness
+
+problem
+
+- bad congestion control can affect fairness
+- i.e. some connections can strave
+- Hard fairness is difficult to implement
+
+Max Min Fairness
+
+- bandwidth is conserved
+- bandwidth cannot be increased for a connection without decreasing bandwith for another conneciton
+
+#### Additive Increase Multiplicative Decrease
+
+algorithim to provide max min fairness
+
+```
+w(t + 1) = w(t) + a     if no congestion
+         = w(t) * b     if congestion
+```
+
+where a > 0 and 0 < b < 1  
+advantage
+
+- other AIAD and MIMD occilate around
+- this algorithim converges towards optimal point
+

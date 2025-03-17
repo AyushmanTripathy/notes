@@ -60,6 +60,32 @@ A.m(d);     //super
 
 ## Inheritance
 
+```java
+class A {
+  int x = 10;
+  static void print() {
+    System.out.println("A");
+  }
+}
+
+class B extends A {
+  int x = 20;
+  static void print() {
+    System.out.println("B");
+  }
+}
+
+class Main {
+  public static void main(String args[]) {
+    A obj = new B();
+    obj.print()                 //A
+    System.out.println(obj.x)   //10
+    obj.print();
+  }
+}
+```
+
+
 ### Interface
 
 -   until java v1.7, non abstract methods are not supported.

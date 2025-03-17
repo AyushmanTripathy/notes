@@ -27,4 +27,4 @@ t.start();
 
 ## Thread class
 
-- `.join()`, wait for this thread to die
+- `thread.join()`, wait for this thread to die

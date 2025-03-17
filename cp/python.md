@@ -42,6 +42,27 @@ sorted(arr, key = lambda x : x[0] + x[1])
 -   use `reverse=True` for reverse
 -   for string, multiple levels of sorting = concating strings
 
+### String formating
+
+1. F string
+
+```py
+f"My name is {x}"
+```
+
+1. format()
+
+```py
+"My name is {}".format(x)
+```
+
+1. % Operator
+
+```py
+"My name is %s" %x
+"My name is %s and is %s" %(x, y)
+```
+
 ### Number formating
 
 -   x is no of chars (including '.')
@@ -158,3 +179,15 @@ heapq.nsmallest(3, arr)
 a|b #a union b
 a^b #a symmetric difference b, a u b - a n b
 ```
+
+### Mics
+
+- `inf` type is float
+- leading zeros are not permitted, but `00` is fine.
+
+```py
+x = 01 #SyntaxError
+```
+
+- maximum length of identifier is 31
+- 
