@@ -16,31 +16,32 @@ from: [Svelte Docs](https://svelte.dev/docs/svelte/overview)
 - this is deeply reactive, hence updating will also trigger updates
 - These objects are proxies hence they are not actaully mutated
 
-1. $state.raw
-	- not deeply reactive, hence better performance
-	- has to be reassigned
-	- can contain other $state() elements
+### $state.raw
 
-2. $state.snapshot
-	- takes the static snapshot
-	- is not a proxy
-	- used when providing data to external libraries
+- not deeply reactive, hence better performance
+- has to be reassigned
+- can contain other $state() elements
 
+### $state.snapshot
+
+- takes the static snapshot
+- is not a proxy
+- used when providing data to external libraries
 
 ### passing $state to functions
 
 - js is a pass by value language
 
 ```js
-const double = (getA) => { 
-	return () => getA() * 2;
-}
+const double = (getA) => {
+    return () => getA() * 2;
+};
 
 let a = 10;
 const doubled = double(() => a);
-console.log(doubled()) //20
+console.log(doubled()); //20
 a = 20;
-console.log(doubled()) //40
+console.log(doubled()); //40
 ```
 
 - passing state to functions behaves similarly
@@ -99,7 +100,7 @@ $effect(() => {
 
 ```svelte
 <Child bind:key={valueInParent} />
-``` 
+```
 
 - if parent does not provides this bind:key, default value can be specified
 
@@ -128,7 +129,6 @@ $inspect(value).with(custom)
 - allows access to parent element, when doing custom elements
 - example for dispatching events
 
-
 ```svelte
 // Child.svelte
 <svelte:options customElement="my-child" />
@@ -144,7 +144,7 @@ $inspect(value).with(custom)
 - following snippets are same
 
 ```svelte
-<Child {attr} /> 
+<Child {attr} />
 <Child attr={attr} />
 ```
 
