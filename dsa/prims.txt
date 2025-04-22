@@ -1,0 +1,13 @@
+PRIM'S
+------
+
+WHEN
+  minimum spanning tree
+
+HOW
+  start at a source
+  priority queue of all edges of source
+  choose least weight edge
+  if vertex not connected
+    add edge
+    add all new edges to priority queue

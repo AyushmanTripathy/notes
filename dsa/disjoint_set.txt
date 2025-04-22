@@ -1,0 +1,33 @@
+DISJOINT SETS
+-------------
+
+WHEN
+  check if two elements belong to same set
+  adding edges without creating cycles
+HOW
+  reverse tree
+
+optimised version
+  -1 * height of tree for root
+  union so that height is not increased
+
+STRUCTURE
+---------
+
+def add_set(x)
+  parent[x] = x
+
+def find_root(x)
+  if parent[x] == x
+    return x
+  else
+    return find_root(parent[x])
+
+def in_same_set(x, y)
+  return find_root(x) == find_root(y):
+
+def union(x, y)
+  root_x = find_root(x)
+  root_y = find_root(y)
+  if root_x != root_y
+    parent[root_x] = root_y

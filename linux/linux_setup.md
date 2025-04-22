@@ -1,3 +1,11 @@
+## Mime Types
+
+update `/usr/share/applications/*`, MimeType property, then update database
+
+```sh
+update-desktop-database
+```
+
 ## PACMAN
 
 in /etc/pacman.conf uncomment the line

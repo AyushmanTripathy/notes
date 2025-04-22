@@ -1,0 +1,11 @@
+KRUSKAL'S
+---------
+
+WHEN
+  finding minimum spanning trees
+HOW
+  disjoint sets forest for all vertices
+  sort all edges
+  for all sorted edges (a, b), where a & b are not in same disjoint set
+    add edges
+    union disjoint sets, a U b
