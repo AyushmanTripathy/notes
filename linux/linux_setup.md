@@ -17,7 +17,7 @@ in /etc/pacman.conf uncomment the line
 ## Yay
 
 ```
-git clone https://github.com/Jguer/yay --depth 1
+git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
@@ -38,16 +38,41 @@ re login after, adding user to docker group
 sudo usermod -aG docker ayush
 ```
 
+## battery health
+
+- install package `tlp`
+- modify `/etc/tlp.d/00-template.conf`
+
+```
+START_CHARGE_THRESH_BAT0="30"
+STOP_CHARGE_THRESH_BAT0="70"
+```
+
+- enable and start service
+
+```
+sudo systemctl enable tlp
+sudo systemctl start tlp
+```
+
 ## BRIGHTNESS
 
 1. add rule to udevs
 
 in /etc/udev/rules.d/backlight.rules
 
+for intel
 ```
 SUBSYSTEM=="backlight", ACTION=="add", \
   RUN+="/bin/chgrp video /sys/class/backlight/intel_backlight/brightness", \
   RUN+="/bin/chmod g+w /sys/class/backlight/intel_backlight/brightness"
+```
+
+for amd
+```
+SUBSYSTEM=="backlight", ACTION=="add", \
+  RUN+="/bin/chgrp video /sys/class/backlight/amdgpu_bl1/brightness", \
+  RUN+="/bin/chmod g+w /sys/class/backlight/amdgpu_bl1/brightness"
 ```
 
 2. add user to video group
@@ -179,18 +204,18 @@ change permission for /media `chown -R ayush:ayush /media`
 
 #### tools
 
-1. slock [lock screen]
-1. tree [listing directories]
+1. redshift [screen temperature]
+1. fzf [fuzzy finder]
 1. pandoc [opening .docx, .pptx]
-1. openssh [ssh client and daemon]
-1. sshfs [mounting remote directories]
 1. yay [AUR package manager]
 1. scrot [screen shot]
 1. slop [mouse selection]
 1. udisks2 [usb ejection]
 1. zip and unzip [working with .zips]
-1. fzf [fuzzy finder]
 1. qrencode [qrcodes]
+1. tree [listing directories]
+1. openssh [ssh client and daemon]
+1. sshfs [mounting remote directories]
 
 1. xdotool [automations]
 1. xclip [clipboard]
@@ -199,6 +224,8 @@ change permission for /media `chown -R ayush:ayush /media`
 #### daemons
 
 1. picom [compositor]
+1. dockerd [docker]
+1. tlp [power managment]
 1. pipewire [audio]
 1. networkmanager [networking]
 1. dunst & libnotify [notifications]

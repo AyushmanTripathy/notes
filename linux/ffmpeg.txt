@@ -25,6 +25,11 @@ OPTIONS
 GET DURATION
   ffprobe -i clip.mp4 -show_entries format=duration -v quiet -of csv="p=0"
 
+SCALE
+  scale images into dimensions
+
+  ffmpeg -i in.jpg -vf scale=WIDTH:HEIGHT out.jpg
+
 CONCAT
   make txt file with name of files
   "file name.mp4"
