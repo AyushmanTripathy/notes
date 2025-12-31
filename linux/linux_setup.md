@@ -55,6 +55,23 @@ sudo systemctl enable tlp
 sudo systemctl start tlp
 ```
 
+## LEDS
+
+1. add rule to udevs
+
+NOTE: only for thinkpad
+
+in /etc/udev/rules.d/leds.rules
+```
+SUBSYSTEM=="leds", KERNEL=="platform::micmute", ACTION=="add", \
+  RUN+="/bin/chgrp ayush /sys/class/leds/platform::micmute/brightness", \
+  RUN+="/bin/chmod g+w /sys/class/leds/platform::micmute/brightness"
+
+SUBSYSTEM=="leds", KERNEL=="tpacpi::power", ACTION=="add", \
+  RUN+="/bin/chgrp ayush /sys/class/leds/tpacpi::power/brightness", \
+  RUN+="/bin/chmod g+w /sys/class/leds/tpacpi::power/brightness"
+```
+
 ## BRIGHTNESS
 
 1. add rule to udevs
