@@ -25,6 +25,11 @@ OPTIONS
 GET DURATION
   ffprobe -i clip.mp4 -show_entries format=duration -v quiet -of csv="p=0"
 
+IMAGE QUALITY
+  quality factor can be [2:31], with 31 being worst
+
+  ffmpeg -i input.jpg -q:v 2 output.jpg
+
 SCALE
   scale images into dimensions
 
