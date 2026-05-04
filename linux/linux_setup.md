@@ -16,6 +16,8 @@ in /etc/pacman.conf uncomment the line
 
 ## Yay
 
+required package: `base-devel`
+
 ```
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -217,7 +219,9 @@ change permission for /media `chown -R ayush:ayush /media`
 1. neovim [text editor]
 1. moc [music player]
 1. htop [task manager]
+1. ncdu [disk usage]
 1. man [docs]
+1. pulsemixer [audio control]
 
 #### tools
 
@@ -257,5 +261,7 @@ change permission for /media `chown -R ayush:ayush /media`
 #### programming
 
 1. nodejs [from nvm]
+1. bun [from pacman]
+1. postgresql-libs [client side tools]
 1. pip [package manager for python]
 1. nodemon, live-server & editmd [from npm]
