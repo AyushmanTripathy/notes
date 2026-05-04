@@ -232,6 +232,7 @@ change permission for /media `chown -R ayush:ayush /media`
 1. scrot [screen shot]
 1. slop [mouse selection]
 1. udisks2 [usb ejection]
+1. ripgrep
 1. zip and unzip [working with .zips]
 1. qrencode [qrcodes]
 1. tree [listing directories]
@@ -262,6 +263,7 @@ change permission for /media `chown -R ayush:ayush /media`
 
 1. nodejs [from nvm]
 1. bun [from pacman]
+1. tree-sitter-cli [from npm]
 1. postgresql-libs [client side tools]
 1. pip [package manager for python]
 1. nodemon, live-server & editmd [from npm]
