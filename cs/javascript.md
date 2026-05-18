@@ -30,3 +30,12 @@ if (!user)
     throwError()
 typeof user // User
 ```
+
+### void operator
+
+Makes any expression into undefined. Can used for returning undefined in
+single line if conditions for functions.
+
+```
+void (2 + 2) //undefined
+```
