@@ -7,3 +7,5 @@ e07c6675.jpg|./networks/network.md|classfull addressing format
 c627416a.jpg|./networks/network.md|subnet mark format
 df1f07c4.jpg|./cs/http.md|HTTP v1.0
 71ce6908.jpg|./cs/http.md|HTTP v1.1
+e6cf5cea.jpg|./dbms/mongodb.md|MMAPv1 document loopup
+49cea2de.jpg|./dbms/mongodb.md|WiredTiger _id to recordid mapping
