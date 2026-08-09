@@ -9,3 +9,10 @@ df1f07c4.jpg|./cs/http.md|HTTP v1.0
 71ce6908.jpg|./cs/http.md|HTTP v1.1
 e6cf5cea.jpg|./dbms/mongodb.md|MMAPv1 document loopup
 49cea2de.jpg|./dbms/mongodb.md|WiredTiger _id to recordid mapping
+3756ecf7.jpg|./ai/llm.md|tokens -> embedding -> queries
+e1a17cdc.jpg|./ai/llm.md|application of softmax
+ffd8741f.jpg|./ai/llm.md|Dot product -> softmax
+0f7e493d.jpg|./ai/llm.md|Computing value -> updating embeddings
+f4053f44.jpg|./ai/llm.md|Multi headed attension for single embedding
+c5bb0345.jpg|./ai/llm.md|direction of vectors hold meaning
+d2895a79.jpg|./ai/llm.md|MLP working

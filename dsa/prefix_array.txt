@@ -3,6 +3,7 @@ PREFIX ARRAY
 
 WHEN
   sum, freq etc in a range
+  multiplication of all except one (prefix + postfix)
 
 HOW
   quntity in range [i, j]

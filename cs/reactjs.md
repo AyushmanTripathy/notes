@@ -4,9 +4,9 @@ from [react.dev/learn](https://react.dev/learn)
 
 ## State
 
--   state is like memory of each component
--   state should be owned by a common parent
--   can be created by `useState` hook
+- state is like memory of each component
+- state should be owned by a common parent
+- can be created by `useState` hook
 
 ```js
 const [state, setState] = useState(initialState);
@@ -14,8 +14,8 @@ const [state, setState] = useState(initialState);
 
 ## Immutability
 
--   states should not be mutated in react
--   reason:
+- states should not be mutated in react
+- reason:
 
 ```js
 x = 100;
@@ -23,32 +23,32 @@ x = 100;
 setX(0);
 ```
 
--   also, setting to same reference that is modified doesn't work
--   because react considers them same and hence no rerender
--   local mutations, mutating object before setting it as state, are fine
+- also, setting to same reference that is modified doesn't work
+- because react considers them same and hence no rerender
+- local mutations, mutating object before setting it as state, are fine
 
 ## Queueing of state updates
 
--   react waits for event handlers to finish before processing state updates
--   called `batching`
--   hence value of x will change only by one
+- react waits for event handlers to finish before processing state updates
+- called `batching`
+- hence value of x will change only by one
 
 ```js
 setX(x + 1);
 setX(x + 1);
 ```
 
--   instead changes can be queued
--   gives correct result
+- instead changes can be queued
+- gives correct result
 
 ```js
 setX((x) => x + 1);
 setX((x) => x + 1);
 ```
 
--   naming convetion, first letter or fullname
--   to prevent `batching`, use `flushSync`
--   forces to commit the changes before continuing
+- naming convetion, first letter or fullname
+- to prevent `batching`, use `flushSync`
+- forces to commit the changes before continuing
 
 ```js
 flushSync(() => setX(10));
@@ -56,44 +56,44 @@ flushSync(() => setX(10));
 
 ## Rendering
 
--   during inital render, DOM nodes are created
--   rerender is triggered by state changes
+- during inital render, DOM nodes are created
+- rerender is triggered by state changes
 
 1. rendering, is calling the component, whoose state changed
 1. commiting, change DOM to make same as last rendered output
 
 ## Hooks
 
--   allow you to use react's features
--   called immediately inside a component (not inside conditional or loops)
+- allow you to use react's features
+- called immediately inside a component (not inside conditional or loops)
 
 ## useContext hook
 
--   pass state to entire sub tree
--   adapting to situations
--   creating a context in a file
+- pass state to entire sub tree
+- adapting to situations
+- creating a context in a file
 
 ```js
 export const StateContext = createContext(initialState);
 ```
 
--   parent has to provide context's value to children
+- parent has to provide context's value to children
 
 ```js
 <StateContext.Provider value={stateValue}> .... </StateContext.Provider>
 ```
 
--   context can be used in a child by importing it and
+- context can be used in a child by importing it and
 
 ```js
 const state = useContext(StateContext);
 ```
 
--   try passing jsx as children before doing this
+- try passing jsx as children before doing this
 
 ## useReducer hook
 
--   consolidate state update logic outside componant
+- consolidate state update logic outside componant
 
 ```js
 const [state, dispatch] = useReducer(reducer, initialState);
@@ -107,7 +107,7 @@ function reducer(state, action) {
 }
 ```
 
--   named after the `reduce` array method
+- named after the `reduce` array method
 
 ```js
 //also works for many actions at once
@@ -116,8 +116,8 @@ finalState = actions.reduce(reducer, initialState);
 
 ## Combining useReducer and useContext
 
--   export all state and state updating logic to `StateProvider.js`
--   it would export a `StateProvider` component which excepts children
+- export all state and state updating logic to `StateProvider.js`
+- it would export a `StateProvider` component which excepts children
 
 ```jsx
 export function StateProvider({ children }) {
@@ -132,8 +132,8 @@ export function StateProvider({ children }) {
 }
 ```
 
--   the reducer function will be in the same file
--   this can export `custom hooks`
+- the reducer function will be in the same file
+- this can export `custom hooks`
 
 ```js
 export const useState = () => useContext(StateContext);
@@ -142,8 +142,8 @@ export const useStateDispatch = () => useContext(StateDispatchContext);
 
 ## useRef
 
--   remembered information but does not trigger a rerender
--   unlike state, ref is mutable
+- remembered information but does not trigger a rerender
+- unlike state, ref is mutable
 
 ```js
 const ref = useRef(initialValue);
@@ -151,15 +151,15 @@ console.log(ref.current); //to use the current value
 ref.current += 1;
 ```
 
--   best practise is to not use `ref` while rendering
--   used to get DOM elements and use Browsers APIs
+- best practise is to not use `ref` while rendering
+- used to get DOM elements and use Browsers APIs
 
 ```jsx
 <div ref={myRef}></div>
 ```
 
--   to store multiple references use a `ref callback`
--   here node is DOM element when setting ref and null when deleting node
+- to store multiple references use a `ref callback`
+- here node is DOM element when setting ref and null when deleting node
 
 ```jsx
 const listRef = useRef(new Map());
@@ -171,7 +171,7 @@ function setRef(ele, i) {
 list.map((ele, i) => <div ref={setRef(ele, i)}></div>);
 ```
 
--   `canary` feature is the ref callback cleanup function
+- `canary` feature is the ref callback cleanup function
 
 ```
 function setRef(node) {
@@ -181,8 +181,8 @@ function setRef(node) {
 }
 ```
 
--   reference is not shared to other components
--   to give reference use `forwardRef`
+- reference is not shared to other components
+- to give reference use `forwardRef`
 
 ```jsx
 const Child = forwardRef(({ props, ref }) => <div ref={ref}></div>);
@@ -194,14 +194,14 @@ function Parent() {
 }
 ```
 
--   `useImperativeHandle` can be used to restrict exposure of ref
+- `useImperativeHandle` can be used to restrict exposure of ref
 
 ## useEffect
 
--   Effects are functions that run at the end of each commit
--   used to step out of react and syncronise with external systems
--   rendering code is pure, effects have all the impure stuff
--   beware of infinite loops (setting state inside of effect)
+- Effects are functions that run at the end of each commit
+- used to step out of react and syncronise with external systems
+- rendering code is pure, effects have all the impure stuff
+- beware of infinite loops (setting state inside of effect)
 
 ```js
 useEffect(() => {
@@ -213,16 +213,25 @@ useEffect(() => {
 }, [state]);
 ```
 
--   2nd arg is a list of states on which effect depends on
--   empty list means run only when component first appears (like 'onMount')
--   not specifing, means run on every rerender
--   effects can also depend on refs
--   effects are called twice duing development, won't happen in production
+- **DEPRECATED**: 2nd arg is a list of states on which effect depends on 
+- empty list means run only when component first appears (like 'onMount')
+- not specifing, providing undefined, means run on every rerender
+- effects can also depend on refs
+- effects are called twice duing development, won't happen in production
 
--   clean up function should reset things in the function
--   like remove listeners, undo css changes, discard network requests
--   when fetching data, beware of `race conditions`
--   for reseting a component's state after props changes, use `key` prop
+- clean up function should reset things in the function
+- like remove listeners, undo css changes, discard network requests
+- when fetching data, beware of `race conditions`
+
+## useEffectEvent
+
+- The dependency array in useEffect is no longer a developer choise.
+- It needs to contain all reactive values used in effect logic.
+- Hence we seprate reactive logic in effect and non reactive logic in useEffectEvent
+
+### Key prop
+
+- for reseting a component's state after props changes, use `key` prop
 
 ```jsx
 export default Parent({ id }) {
@@ -234,9 +243,9 @@ function Child({ id }) {
 }
 ```
 
--   here name will be reset to `""` if id changes
--   if you want to change only few states in a component, not all
--   **NOTE** changing state with props is bad, as components should be pure
+- here name will be reset to `""` if id changes
+- if you want to change only few states in a component, not all
+- **NOTE** changing state with props is bad, as components should be pure
 
 ```jsx
 function Compnent({ id }) {
@@ -251,7 +260,7 @@ function Compnent({ id }) {
 
 ## useMemo
 
--   used to cache expensive calculations
+- used to cache expensive calculations
 
 ```js
 function Component({ prop }) {
@@ -265,12 +274,57 @@ function Component({ prop }) {
 }
 ```
 
--   this called function should be pure
--   performance can be checked by cpu throttling
+- this called function should be pure
+- performance can be checked by cpu throttling
+- useMemo should not be used as replacement of `$derived` in svelte
+
+## React Compiler
+
+- Automatically optimises React apps by using `useMemo` & `useCallback`
+- When a component's state changes, that components and all its children are rerendered.
+- Unless you have applied manual memoization without the compiler.
+-
+
+## Rules of react
+
+1. Components and Hooks must be pure
+    - Components must be idempotent, same input -> same output
+    - Side effects must run outside render
+    - Props and state are immutable
+    - Return values and arguments to hooks are immutable
+    - Values passed to JSX are immutable
+2. React calls components and hooks
+    - React components should be used in JSX only, not called directly.
+    - Hooks should not be passed as regular values
+3. Rule of hooks
+    - Only call Hooks at the top level
+    - Only call Hooks from React functions
+
+## Immer
+
+- Automates the cloning of state, using a draft.
+- Also not need to return new state
+- For state,
+
+```js
+const [x, setX] = useImmer({});
+
+setX((draft) => draft.age++);
+```
+
+- for reducers
+
+```
+function reducer(draft, action) {
+    draft.age++
+}
+
+const [x, dispatch] = useImmerReducer(reducer, {})
+```
 
 ## Minor things
 
--   run code once when application starts
+- run code once when application starts
 
 ```js
 if (typedef window != "undefined") {
@@ -280,20 +334,21 @@ if (typedef window != "undefined") {
 function App() {
 ```
 
--   returing null for not rendering anything
--   render if true with `&&` (NOTE: dont use numbers as condition)
+- returing null for not rendering anything
+- render if true with `&&` (NOTE: dont use numbers as condition)
 
 ```js
 <p> ayushman {doLastName && "tripathy"} </p>
 ```
 
--   remember, if condition is 0, react will render 0
--   `children` is a prop to get jsx inside the component
--   all events in react propagates upwards, except `onScroll`
--   for changing dynamic name in object
+- remember, if condition is 0, react will render 0
+- `children` is a prop to get jsx inside the component
+- all events in react propagates upwards, except `onScroll`
+- for changing dynamic name in object
 
 ```js
 { ...obj, [key]:value }
 ```
 
--   to reset a component, pass different `key`
+- to reset a component, pass different `key`
+- `Controlled components` are components using react, `Uncontrolled` use DOM elements. 

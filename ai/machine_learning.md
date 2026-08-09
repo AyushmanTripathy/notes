@@ -201,3 +201,11 @@ with training text, vocabulary can be increased
 each token has a associated numeric vector
 each numeric elements represents a attribute
 hence related tokens have similar embedding
+
+#### ReLU
+
+Rectifier linear Unit, because human nuerons either fire or not.
+
+```
+ReLU(a) = max(0, a)
+```
