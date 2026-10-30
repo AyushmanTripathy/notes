@@ -90,6 +90,32 @@ A - B - C - D - E - F' - G' - H'
 ```
 
 
+## Self hosting
+
+Just create a bare repo.
+
+```
+git init --bare
+```
+
+Generate a key pair, locally
+
+```
+ssh-keygen -t ed25519 -C "ayushman@tripathy.com"
+```
+
+Add public key to authorized keys in `.ssh/authorized_keys`
+
+Add a remote to local git repo
+
+```
+git remote add local git@1.1.1.1:/srv/git/notes.git
+```
+
+That's it
+
+__NOTE__: You may also want to restrict shell acces to that git user.
+
 ## Mics
 
 -   better printing of logs
